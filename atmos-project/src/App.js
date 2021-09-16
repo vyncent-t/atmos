@@ -8,6 +8,8 @@ function App() {
             <Todo text="wake up" />
             <Todo text="brush teeth" />
             <Todo text="eat breakfast" />
+
+
         </div>
     )
 }
