@@ -1,14 +1,15 @@
 import React from 'react';
-import Todo from './components/Todo'
+// import AtmosNavbar from './components/Navbar';
+import Menu from './components/Menu'
 
 function App() {
     return (
-        <div>
-            <h1>My Todos</h1>
-            <Todo text="wake up" />
-            <Todo text="brush teeth" />
-            <Todo text="eat breakfast" />
-
+        <div className="mainpage">
+            <div className="containerdiv">
+                {/* <AtmosNavbar /> */}
+                <h1>Dashboard</h1>
+                <Menu text="Please select your content" />
+            </div>
 
         </div>
     )

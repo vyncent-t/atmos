@@ -1,10 +1,11 @@
 import { useState } from 'react';
-
 import ConfModal from './Modal';
 import Backdrop from './Backdrop'
+import MusicForm from './MusicForm';
+import VideoForm from './VideoForm';
 
 
-function Todo(props) {
+function Menu(props) {
     const [modalOn, setModalOn] = useState(false);
 
     function PracDeleteHandler() {
@@ -14,16 +15,21 @@ function Todo(props) {
     function closeModalHandler() {
         setModalOn(false)
     }
+
     return (
-        <div className="praccard">
+        <div className="pracmenu">
             <h2>{props.text}</h2>
-            <div className="pracactions">
-                <button className="pracbtn" onClick={PracDeleteHandler}>Delete</button>
+            <div className="formContainer">
+                <MusicForm />
+                <VideoForm />
             </div>
-            {modalOn && <ConfModal />}
+            <div className="pracactions">
+                <button className="pracbtn" onClick={PracDeleteHandler}>Create Atmosphere</button>
+            </div>
+            {modalOn && <ConfModal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
             {modalOn && <Backdrop onCancel={closeModalHandler} />}
         </div>
     )
 }
 
-export default Todo;
+export default Menu;
