@@ -1,6 +1,46 @@
 import React from 'react';
+import { Container,Col,Row } from 'react-bootstrap';
+import title from '../../images/title.png';
+import tv from '../../images/tvlogo.png';
+import button from '../../images/switch.png';
 
-const Home = () => {
+//styling
+const styles = {
+    background: '#7fb069',
+}
+
+const align = {
+display: 'flex',
+justifyContent: 'center'
+}
+
+const text = {
+    color: '#ece4b7',
+    fontFamily: 'OCR A Std',
+    display: 'flex',
+justifyContent: 'center',
+fontSize: 22
+}
+
+const drop = {
+    filter: 'drop-shadow(40px 20px 12px )',
+    display: 'flex',
+justifyContent: 'center'
+}
+
+const buttonStyle = {
+    border:"none",
+    backgroundColor:"transparent",
+    outline:"none",
+    margin:'none',
+    display: 'flex',
+justifyContent: 'center'
+}
+
+
+const LandingPage = () => {
+
+  //jquery script
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     var redirect_uri = "https://vyncent-t.github.io/atmosphere-project/"; 
 
@@ -79,14 +119,14 @@ const Home = () => {
     
     
     function handleAuthorizationResponse(){
-        if ( this.status == 200 ){
+        if ( this.status === 200 ){
             var data = JSON.parse(this.responseText);
             console.log(data);
-            if ( data.access_token != undefined ){
+            if ( data.access_token !== undefined ){
                 const spotify_token = data.access_token;
                  //localStorage.setItem("access_token", access_token);
             }
-            if ( data.refresh_token  != undefined ){
+            if ( data.refresh_token  !== undefined ){
                 const refresh_token = data.refresh_token;
                  //localStorage.setItem("refresh_token", refresh_token);
             }
@@ -100,14 +140,28 @@ const Home = () => {
     
     
 
-    return (
-        <div>
-            <h1>atmos</h1>
-<input id="spotifycontent" class="btn btn-primary btn-lg" type="button" onclick={requestAuthorization()} value="Request Authorization"></input>
+    return (<Container style={styles}>
+        <Col >
 
+        <Row style={align}>
+        <img alt="" src={title}></img>
+        </Row>
+
+        <Row style={drop}>
+        <img alt="" src={tv}></img>
+        </Row>
+
+        <p style={text} >A Visual Auditory Experience</p>
+
+        <Row>
+<button id="spotifycontent" type='button' style={buttonStyle} onClick={requestAuthorization}><img alt="" src={button}></img></button>
+</Row>
+
+        </Col>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        </div>
+
+        </Container>
     )
 }
 
-export default Home;
+export default LandingPage;
