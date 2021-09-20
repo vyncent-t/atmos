@@ -8,7 +8,7 @@ import VideoForm from './VideoForm';
 function MainMenu(props) {
     const [modalOn, setModalOn] = useState(false);
 
-    function PracDeleteHandler() {
+    function ModalDeleteHandler() {
         setModalOn(true)
     }
 
@@ -24,7 +24,7 @@ function MainMenu(props) {
                 <VideoForm />
             </div>
             <div className="pracactions">
-                <button className="btn btn-light" onClick={PracDeleteHandler}>Create Atmosphere</button>
+                <button className="btn btn-light" onClick={ModalDeleteHandler}>Create Atmosphere</button>
             </div>
             {modalOn && <ConfModal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
             {modalOn && <Backdrop onCancel={closeModalHandler} />}

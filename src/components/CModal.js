@@ -8,10 +8,10 @@ function ConfModal(props) {
     }
 
     return (
-        <div className="pracmodal">
+        <div className="menuConfirm">
             <p> Are you sure?</p>
-            <button className="pracbtn pracbtn--alt" onClick={cancelHandler}>Cancel</button>
-            <button className="pracbtn" onClick={confirmHandler}>Confirm</button>
+            <button className="btn btn-secondary m-1" onClick={cancelHandler}>Cancel</button>
+            <button className="btn btn-success m-1" onClick={confirmHandler}>Confirm</button>
         </div>
     )
 }
