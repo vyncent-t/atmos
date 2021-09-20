@@ -1,3 +1,5 @@
+import MusicButton from "./MusicButton"
+
 function MusicForm() {
     return (
         <div className="pracmusicmenu">
@@ -5,23 +7,11 @@ function MusicForm() {
                 <h2>Music Choices</h2>
             </div>
             <div className="menubuttons">
-                <form>
-                    <div>
-                        <button className="pracbtn">Piano</button>
-                    </div>
-                    <div>
-                        <button className="pracbtn">Jazz</button>
-                    </div>
-                    <div>
-                        <button className="pracbtn">Acoustic</button>
-                    </div>
-                    <div>
-                        <button className="pracbtn">Lofi</button>
-                    </div>
-                    <div>
-                        <button className="pracbtn">Yoga</button>
-                    </div>
-                </form>
+                <MusicButton musicKeyword="Piano"></MusicButton>
+                <MusicButton musicKeyword="Jazz"></MusicButton>
+                <MusicButton musicKeyword="Acoustic"></MusicButton>
+                <MusicButton musicKeyword="Lofi"></MusicButton>
+                <MusicButton musicKeyword="Yoga"></MusicButton>
             </div>
         </div>
     )

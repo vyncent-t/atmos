@@ -1,3 +1,5 @@
+import VideoButton from "./VideoButton"
+
 function VideoForm() {
     return (
         <div className="pracvideomenu">
@@ -5,23 +7,11 @@ function VideoForm() {
                 <h2>Visual Choices</h2>
             </div>
             <div className="menubuttons">
-                <form>
-                    <div>
-                        <button className="pracbtn">Beach</button>
-                    </div>
-                    <div>
-                        <button className="pracbtn">Waterfall</button>
-                    </div>
-                    <div>
-                        <button className="pracbtn">City</button>
-                    </div>
-                    <div>
-                        <button className="pracbtn">Park</button>
-                    </div>
-                    <div>
-                        <button className="pracbtn">Space</button>
-                    </div>
-                </form>
+                <VideoButton videoKeyword="Beach" />
+                <VideoButton videoKeyword="Waterfall" />
+                <VideoButton videoKeyword="City" />
+                <VideoButton videoKeyword="Park" />
+                <VideoButton videoKeyword="Space" />
             </div>
         </div>
     )
