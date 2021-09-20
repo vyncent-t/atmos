@@ -6,7 +6,7 @@ function MusicButton(props) {
 
     return (
         <div>
-            <button className="pracbtn" onClick={printKeyword}>{props.musicKeyword}</button>
+            <button className="btn btn-success text-light m-1" onClick={printKeyword}>{props.musicKeyword}</button>
         </div>
     )
 }

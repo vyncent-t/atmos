@@ -1,17 +1,11 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import AtmosNavbar from './components/Navbar';
-import Menu from './components/Menu'
+import MainMenuPage from './Pages/MainMenuPage'
 
 function App() {
     return (
-        <div className="mainpage">
-            <div className="containerdiv">
-                {/* <AtmosNavbar /> */}
-                <h1>Dashboard</h1>
-                <Menu text="Please select your content" />
-            </div>
-
-        </div>
+        <MainMenuPage />
     )
 }
 

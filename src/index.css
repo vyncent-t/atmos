@@ -23,7 +23,7 @@ body {
 	width: 100%;
 }
 
-.pracbtn {
+/* .pracbtn {
 	font: inherit;
 	padding: 0.5rem 1.5rem;
 	cursor: pointer;
@@ -46,14 +46,15 @@ body {
 
 .pracbtn--alt:hover {
 	background-color: #f8dae9;
-}
+} */
 
 .pracmenu {
 	align-self: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: rgba(14, 13, 66, 0.692);
+	color: white;
+	background-color: rgba(23, 23, 36, 0.959);
 	border-radius: 25px;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 	padding: 1rem;
@@ -84,7 +85,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(172, 250, 152);
+	background-color: rgb(130, 214, 109);
 	border-radius: 10%;
 	box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
 	margin: 1rem;

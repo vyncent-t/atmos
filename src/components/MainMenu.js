@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import ConfModal from './Modal';
+import ConfModal from './CModal';
 import Backdrop from './Backdrop'
 import MusicForm from './MusicForm';
 import VideoForm from './VideoForm';
 
 
-function Menu(props) {
+function MainMenu(props) {
     const [modalOn, setModalOn] = useState(false);
 
     function PracDeleteHandler() {
@@ -24,7 +24,7 @@ function Menu(props) {
                 <VideoForm />
             </div>
             <div className="pracactions">
-                <button className="pracbtn" onClick={PracDeleteHandler}>Create Atmosphere</button>
+                <button className="btn btn-light" onClick={PracDeleteHandler}>Create Atmosphere</button>
             </div>
             {modalOn && <ConfModal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
             {modalOn && <Backdrop onCancel={closeModalHandler} />}
@@ -32,4 +32,4 @@ function Menu(props) {
     )
 }
 
-export default Menu;
+export default MainMenu;

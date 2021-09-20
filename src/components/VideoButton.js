@@ -6,7 +6,7 @@ function VideoButton(props) {
 
     return (
         <div>
-            <button className="pracbtn" onClick={printKeyword}>{props.videoKeyword}</button>
+            <button className="btn btn-info text-light m-1" onClick={printKeyword}>{props.videoKeyword}</button>
         </div>
     )
 }
