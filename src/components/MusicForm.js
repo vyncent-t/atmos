@@ -2,16 +2,16 @@ import { useState } from 'react';
 import MusicButton from "./MusicButton"
 
 
-function MusicForm() {
+function MusicForm(props) {
     const [musicGenre, setMusicGenre] = useState("no music choice");
-
+    let musicSelect = musicGenre
     return (
         <div className="pracmusicmenu">
             <div>
                 <h2>Music Choices</h2>
             </div>
             <div>
-                <p>{`Your current music choice: ${musicGenre}`}</p>
+                <p>{`Your current music choice: ${musicSelect}`}</p>
             </div>
             <div className="menubuttons">
                 <MusicButton musicKeyword="Piano"

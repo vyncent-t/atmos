@@ -6,14 +6,18 @@ import VideoForm from './VideoForm';
 
 
 function MainMenu(props) {
-    const [modalOn, setModalOn] = useState(false);
+    const [state, setState] = useState({
+        modalOn: false,
+        musicGenre: "none",
+        videoGenre: "none"
+    });
 
     function ModalDeleteHandler() {
-        setModalOn(true)
+        setState({ ...state, modalOn: true })
     }
 
     function closeModalHandler() {
-        setModalOn(false)
+        setState({ ...state, modalOn: false })
     }
 
     return (
@@ -26,8 +30,8 @@ function MainMenu(props) {
             <div className="pracactions">
                 <button className="btn btn-light" onClick={ModalDeleteHandler}>Create Atmosphere</button>
             </div>
-            {modalOn && <ConfModal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
-            {modalOn && <Backdrop onCancel={closeModalHandler} />}
+            {state.modalOn && <ConfModal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
+            {state.modalOn && <Backdrop onCancel={closeModalHandler} />}
         </div>
     )
 }
