@@ -1,12 +1,8 @@
 function VideoButton(props) {
-
-    function printKeyword() {
-        console.log(`User has chosen ${props.videoKeyword} as their video choice`)
-    }
-
+    let keyword = props.videoKeyword
     return (
         <div>
-            <button className="btn btn-info text-light m-1" onClick={printKeyword}>{props.videoKeyword}</button>
+            <button className="btn btn-info text-light m-1" onClick={() => props.userAction(keyword)}>{props.videoKeyword}</button>
         </div>
     )
 }
