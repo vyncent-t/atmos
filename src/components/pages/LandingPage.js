@@ -3,6 +3,7 @@ import { Container,Col,Row } from 'react-bootstrap';
 import title from '../../images/title.png';
 import tv from '../../images/tvlogo.png';
 import button from '../../images/switch.png';
+import { AnimationWrapper } from 'react-hover-animation'
 
 //styling
 const styles = {
@@ -31,10 +32,8 @@ justifyContent: 'center'
 const buttonStyle = {
     border:"none",
     backgroundColor:"transparent",
-    outline:"none",
-    margin:'none',
-    display: 'flex',
-justifyContent: 'center'
+    paddingLeft: '46%',
+   
 }
 
 
@@ -140,7 +139,8 @@ const LandingPage = () => {
     
     
 
-    return (<Container style={styles}>
+    return (
+    <Container style={styles}>
         <Col >
 
         <Row style={align}>
@@ -152,10 +152,10 @@ const LandingPage = () => {
         </Row>
 
         <p style={text} >A Visual Auditory Experience</p>
-
-        <Row>
-<button id="spotifycontent" type='button' style={buttonStyle} onClick={requestAuthorization}><img alt="" src={button}></img></button>
-</Row>
+        <AnimationWrapper>
+        <button id="spotifycontent" type='button' style={buttonStyle} onClick={requestAuthorization}><img alt="" src={button}></img></button>
+        </AnimationWrapper>
+ 
 
         </Col>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
