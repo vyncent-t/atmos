@@ -33,6 +33,7 @@ const buttonStyle = {
     border:"none",
     backgroundColor:"transparent",
     paddingLeft: '46%',
+    cursor: 'pointer'
    
 }
 
