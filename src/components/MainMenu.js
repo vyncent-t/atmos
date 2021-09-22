@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux"
+import { contentActions } from "../store/index"
 import ConfModal from './CModal';
 import Backdrop from './Backdrop'
 import MusicForm from './MusicForm';
@@ -6,18 +7,12 @@ import VideoForm from './VideoForm';
 
 
 function MainMenu(props) {
-    const [state, setState] = useState({
-        modalOn: false,
-        musicGenre: "none",
-        videoGenre: "none"
-    });
+    const dispatch = useDispatch()
+    const showModal = useSelector((state) => state.showCreateModal)
 
-    function ModalDeleteHandler() {
-        setState({ ...state, modalOn: true })
-    }
 
-    function closeModalHandler() {
-        setState({ ...state, modalOn: false })
+    function toggleModalHandler() {
+        dispatch(contentActions.showCreateModal())
     }
 
     return (
@@ -28,10 +23,10 @@ function MainMenu(props) {
                 <VideoForm />
             </div>
             <div className="pracactions">
-                <button className="btn btn-light" onClick={ModalDeleteHandler}>Create Atmosphere</button>
+                <button className="btn btn-light" onClick={toggleModalHandler}>Create Atmosphere</button>
             </div>
-            {state.modalOn && <ConfModal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
-            {state.modalOn && <Backdrop onCancel={closeModalHandler} />}
+            {showModal && <ConfModal onCancel={toggleModalHandler} onConfirm={toggleModalHandler} />}
+            {showModal && <Backdrop onCancel={toggleModalHandler} />}
         </div>
     )
 }

@@ -4,7 +4,8 @@ import { createSlice, configureStore } from "@reduxjs/toolkit"
 // setting the initail state object, this is the master state which will be an expanded object
 const initialState = {
     musicButtonChoice: "no music",
-    videoButtonChoice: "no video"
+    videoButtonChoice: "no video",
+    showCreateModal: false,
 }
 
 // the create slice method creates sections in which we can manipulate the state within the reducer
@@ -20,6 +21,9 @@ const contentSlice = createSlice({
             state.videoButtonChoice = action.payload
         },
 
+        showCreateModal(state) {
+            state.showCreateModal = !state.showCreateModal
+        }
     }
 })
 
