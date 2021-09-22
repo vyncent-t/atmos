@@ -1,8 +1,8 @@
 import VideoButton from "./VideoButton"
-import { useState } from 'react'
+import { useSelector } from "react-redux"
 
 function VideoForm() {
-    const [youtubeGenre, setYoutubeGenre] = useState("No video genre");
+    const videoChoice = useSelector((state) => state.videoButtonChoice)
 
     return (
         <div className="pracvideomenu">
@@ -10,19 +10,14 @@ function VideoForm() {
                 <h2>Visual Choices</h2>
             </div>
             <div>
-                <p>{`Your current video genre: ${youtubeGenre}`}</p>
+                <p>{`Your current video genre: ${videoChoice}`}</p>
             </div>
             <div className="menubuttons">
-                <VideoButton videoKeyword="Beach"
-                    userAction={keyword => setYoutubeGenre(keyword)} />
-                <VideoButton videoKeyword="Waterfall"
-                    userAction={keyword => setYoutubeGenre(keyword)} />
-                <VideoButton videoKeyword="City"
-                    userAction={keyword => setYoutubeGenre(keyword)} />
-                <VideoButton videoKeyword="Park"
-                    userAction={keyword => setYoutubeGenre(keyword)} />
-                <VideoButton videoKeyword="Space"
-                    userAction={keyword => setYoutubeGenre(keyword)} />
+                <VideoButton videoKeyword="Beach"/>
+                <VideoButton videoKeyword="Waterfall"/>
+                <VideoButton videoKeyword="City"/>
+                <VideoButton videoKeyword="Park"/>
+                <VideoButton videoKeyword="Space"/>
             </div>
         </div>
     )

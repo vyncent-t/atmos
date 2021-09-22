@@ -1,29 +1,24 @@
-import { useState } from 'react';
 import MusicButton from "./MusicButton"
+import { useSelector } from "react-redux"
 
 
 function MusicForm(props) {
-    const [musicGenre, setMusicGenre] = useState("no music choice");
-    let musicSelect = musicGenre
+    const musicChoice = useSelector((state) => state.musicButtonChoice)
+
     return (
         <div className="pracmusicmenu">
             <div>
                 <h2>Music Choices</h2>
             </div>
             <div>
-                <p>{`Your current music choice: ${musicSelect}`}</p>
+                <p>{`Your current music choice: ${musicChoice}`}</p>
             </div>
             <div className="menubuttons">
-                <MusicButton musicKeyword="Piano"
-                    userClick={keyword => setMusicGenre(keyword)} />
-                <MusicButton musicKeyword="Jazz"
-                    userClick={keyword => setMusicGenre(keyword)} />
-                <MusicButton musicKeyword="Acoustic"
-                    userClick={keyword => setMusicGenre(keyword)} />
-                <MusicButton musicKeyword="Lofi"
-                    userClick={keyword => setMusicGenre(keyword)} />
-                <MusicButton musicKeyword="Yoga"
-                    userClick={keyword => setMusicGenre(keyword)} />
+                <MusicButton musicKeyword="Piano" />
+                <MusicButton musicKeyword="Jazz" />
+                <MusicButton musicKeyword="Acoustic" />
+                <MusicButton musicKeyword="Lofi" />
+                <MusicButton musicKeyword="Yoga" />
             </div>
         </div>
     )
