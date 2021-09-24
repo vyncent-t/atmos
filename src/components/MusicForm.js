@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 
 
 function MusicForm(props) {
-    const musicChoice = useSelector((state) => state.musicButtonChoice)
+    const musicChoice = useSelector((state) => state.content.musicButtonChoice)
 
     return (
         <div className="pracmusicmenu">

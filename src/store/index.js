@@ -1,38 +1,17 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit"
-// using toolkit in order to shortcut some template code to make overall code smaller and easier to manage
+import { configureStore } from "@reduxjs/toolkit"
 
-// setting the initail state object, this is the master state which will be an expanded object
-const initialState = {
-    musicButtonChoice: "no music",
-    videoButtonChoice: "no video",
-    showCreateModal: false,
-}
+// we are exporting only the reducers from the slices made in other files since we unly need the reducers and actions
+import contentReducer from "./Content"
+import controlReducer from "./UserControls"
 
-// the create slice method creates sections in which we can manipulate the state within the reducer
-const contentSlice = createSlice({
-    name: "contentManage",
-    initialState,
-    reducers: {
-        updateMusicContent(state, action) {
-            state.musicButtonChoice = action.payload
-        },
-
-        updateVideoContent(state, action) {
-            state.videoButtonChoice = action.payload
-        },
-
-        showCreateModal(state) {
-            state.showCreateModal = !state.showCreateModal
-        }
-    }
-})
 
 // configure store combines multiple slices in order to execute their reducers
 const store = configureStore({
-    reducer: contentSlice.reducer
+    reducer: {
+        content: contentReducer,
+        controls: controlReducer
+    }
 })
 
-// using contentSlice .actions will match the reducers to their own generated key pairs, no longer need to write out {type: example}
-// toolkit creates an "action creator"  which will create the actions object for us, using the methods we run in the reducers prop under contentSlice
-export const contentActions = contentSlice.actions;
+
 export default store;

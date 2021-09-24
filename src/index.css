@@ -82,7 +82,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(130, 214, 109);
+	background-color: rgb(113, 216, 87);
 	border-radius: 10%;
 	box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
 	margin: 1rem;
@@ -90,7 +90,20 @@ body {
 	height: 30em;
 }
 
-.pracvideomenu {
+.videomenu {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(83, 104, 197);
+	border-radius: 10%;
+	box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
+	margin: 1rem;
+	width: 45%;
+	height: 30em;
+}
+
+.videocontent {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

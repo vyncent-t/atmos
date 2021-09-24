@@ -1,14 +1,15 @@
 import { useDispatch, useSelector } from "react-redux"
-import { contentActions } from "../store/index"
+import { contentActions } from "../store/Content"
 import ConfModal from './CModal';
 import Backdrop from './Backdrop'
 import MusicForm from './MusicForm';
 import VideoForm from './VideoForm';
+import VideoContent from "./VideoContent";
 
 
 function MainMenu(props) {
     const dispatch = useDispatch()
-    const showModal = useSelector((state) => state.showCreateModal)
+    const showModal = useSelector((state) => state.content.showCreateModal)
 
 
     function toggleModalHandler() {
@@ -27,6 +28,7 @@ function MainMenu(props) {
             </div>
             {showModal && <ConfModal onCancel={toggleModalHandler} onConfirm={toggleModalHandler} />}
             {showModal && <Backdrop onCancel={toggleModalHandler} />}
+            <VideoContent />
         </div>
     )
 }
