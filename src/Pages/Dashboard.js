@@ -1,7 +1,7 @@
 import VideoContent from "../components/VideoContent";
 
 
-function ContentPage() {
+function Dashboard() {
 
     return (
         <div className="mainpage">
@@ -14,4 +14,4 @@ function ContentPage() {
     )
 }
 
-export default ContentPage
+export default Dashboard

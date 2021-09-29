@@ -5,7 +5,7 @@ function MainMenuPage() {
         <div className="mainpage">
             <div className="containerdiv">
                 {/* <AtmosNavbar /> */}
-                <h1>Dashboard</h1>
+                <h1>Menu</h1>
                 <MainMenu text="Please select your content" />
             </div>
         </div>
