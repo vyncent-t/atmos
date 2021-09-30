@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import AtmosNavbar from './components/Navbar';
 import MainMenuPage from './pages/MainMenuPage'
-import { Route, Switch, Redirect } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import Dashboard from './pages/Dashboard';
 import Intropage from './pages/Intropage';
 
