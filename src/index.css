@@ -116,6 +116,19 @@ body {
 	height: 30em;
 }
 
+.musiccontent {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(113, 216, 87);
+	border-radius: 10%;
+	box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
+	margin: 1rem;
+	width: 45%;
+	height: 30em;
+}
+
 .pracactions {
 	text-align: right;
 }

@@ -1,3 +1,4 @@
+import MusicContent from "../components/MusicContent";
 import VideoContent from "../components/VideoContent";
 
 
@@ -9,6 +10,8 @@ function Dashboard() {
                 {/* <AtmosNavbar /> */}
                 <h1>Dashboard</h1>
                 <VideoContent />
+                <MusicContent />
+
             </div>
         </div>
     )

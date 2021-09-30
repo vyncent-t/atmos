@@ -1,11 +1,15 @@
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom"
 function ConfModal(props) {
+
+
+    const history = useHistory();
 
     function cancelHandler() {
         props.onCancel();
     }
     function confirmHandler() {
-        props.onConfirm();
+        history.push("/dashboard")
     }
 
     return (
