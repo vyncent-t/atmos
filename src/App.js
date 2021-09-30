@@ -5,7 +5,7 @@ import Dashboard from './components/pages/Dashboard'
 
 const code = new URLSearchParams(window.location.search).get('code')
 function App() {
-  return code ? <Dashboard code={code} /> : (
+  return code ? <Dashboard code={code} /> :(
     <div >
   <LandingPage/>
     </div>
