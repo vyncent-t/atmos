@@ -7,6 +7,20 @@ import VideoForm from './VideoForm';
 import VideoContent from "./VideoContent";
 
 
+// import useAuth from '../useAuth'
+// import SpotifyWebApi from 'spotify-web-api-node'
+
+
+// const spotifyApi = new SpotifyWebApi({
+//     clientid: '50885eb87ce14757bdde10e7fb01f91a'
+// })
+
+// function SpotifyMusic() {
+
+
+
+// }
+
 function MainMenu(props) {
     const dispatch = useDispatch()
     const showModal = useSelector((state) => state.content.showCreateModal)
