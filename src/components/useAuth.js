@@ -15,7 +15,7 @@ useEffect(() =>{
    }).then(res => {
        console.log(res.data)
        setAccessToken(res.data.accessToken)
-       setRefreshToken(res.data.RefreshToken)
+       setRefreshToken(res.data.refreshToken)
        setExpiresIn(res.data.expiresIn)
        //removes data from url and sets it back to root
        window.history.pushState({}, null, '/')
