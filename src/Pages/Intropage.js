@@ -1,6 +1,7 @@
 
 import { useDispatch, useSelector } from "react-redux"
 import { spotifyActions } from "../store/SpotifyState"
+import { useLocation } from "react-router-dom"
 
 
 //url used to authorize the spotify api and retrieve an access token along with the scope of parameters that we are asking permission for.
@@ -9,7 +10,17 @@ import { spotifyActions } from "../store/SpotifyState"
 
 
 function Intropage() {
+    const location = useLocation()
+    console.log(location)
+    const locationCode = location.search.slice(6)
+    console.log(locationCode)
+
+
+
     const isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
+
+
+
     const dispatch = useDispatch()
 
     function userSpotifyAuthHandler() {
@@ -38,17 +49,32 @@ function Intropage() {
         window.location.href = url
     }
 
-    return (
-        <div className="mainpage">
-            <div className="containerdiv">
-                <h1>Welcome to Atmos</h1>
-                <div className="pracmenu">
-                    <p>You will be redirected to spotify when you press the button</p>
-                    <button onClick={userSpotifyAuthHandler}>authorize on spotify</button>
-                </div>
-            </div>
-        </div>
-    )
+    if (locationCode) {
+        return (
+            <div className="mainpage">
+                <div div className="containerdiv" >
+                    <h1>Welcome to Atmos</h1>
+                    <div className="pracmenu">
+                        <p>{locationCode}</p>
+                        <button onClick={userSpotifyAuthHandler}>authorize on spotify</button>
+                    </div>
+                </div >
+            </div >
+        )
+    } else {
+        return (
+            <div className="mainpage">
+                <div div className="containerdiv" >
+                    <h1>Welcome to Atmos</h1>
+                    <div className="pracmenu">
+                        <p>You will be redirected to spotify when you press the button</p>
+                        <button onClick={userSpotifyAuthHandler}>authorize on spotify</button>
+                    </div>
+                </div >
+            </div >
+        )
+    }
+
 }
 
 export default Intropage
