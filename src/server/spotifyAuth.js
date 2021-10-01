@@ -1,66 +1,69 @@
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { saveSpotify, spotifyActions } from '../store/SpotifyState';
+import { saveSpotify } from '../store/SpotifyState';
 import axios from 'axios';
 
 
 function useAuth(code) {
-    const [useAccess, setAccess] = useState()
-    const [useRefresh, setRefresh] = useState()
-    const [useExpire, setExpire] = useState()
+    // const [useAccess, setAccess] = useState()
+    // const [useRefresh, setRefresh] = useState()
+    // const [useExpire, setExpire] = useState()
 
-    var authcode = useSelector((state) => state.spotify.authcode)
+    // var authcode = useSelector((state) => state.spotify.authcode)
     var accesstoken = useSelector((state) => state.spotify.accesstoken)
-    var refreshtoken = useSelector((state) => state.spotify.refreshtoken)
-    var expiresin = useSelector((state) => state.spotify.expiresin)
-    var isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
+    // var refreshtoken = useSelector((state) => state.spotify.refreshtoken)
+    // var expiresin = useSelector((state) => state.spotify.expiresin)
+    // var isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
 
     const dispatch = useDispatch()
 
-    axios
-        .post('http://localhost:3001/login', {
-            code,
-        }).then(res => {
-            console.log(res.data)
+    useEffect(() => {
 
-            dispatch(saveSpotify(res))
-            setAccess(res.data.accessToken)
-            setRefresh(res.data.refreshToken)
-            setExpire(res.data.expiresIn)
+        axios
+            .post('http://localhost:3001/login', {
+                code,
+            }).then(res => {
+                console.log(res.data)
 
-
-            // console.log(res.data.accessToken)
-            // console.log(res.data.refreshToken)
-            // console.log(res.data.expiresIn)
-
-            // console.log("access token after")
-
-            // console.log(expiresin)
-            // dispatch(spotifyActions.updateSpotifyCode(code))
-
-            // dispatch(spotifyActions.updateSpotifyAccess(res.data.accessToken))
-
-            // dispatch(spotifyActions.updateSpotifyRefresh(res.data.refreshToken))
-
-            // dispatch(spotifyActions.updateSpotifyExpire(res.data.expiresIn))
+                dispatch(saveSpotify(res))
+                // setAccess(res.data.accessToken)
+                // setRefresh(res.data.refreshToken)
+                // setExpire(res.data.expiresIn)
 
 
-            //removes data from url and sets it back to root
-            // window.history.pushState({}, null, "/")
-            // let codePocket = "http://localhost:3000/menu"
-            // window.location.href = codePocket
-            console.log(useAccess)
-            console.log(useRefresh)
-            console.log(useExpire)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
+                // console.log(res.data.accessToken)
+                // console.log(res.data.refreshToken)
+                // console.log(res.data.expiresIn)
+
+                // console.log("access token after")
+
+                // console.log(expiresin)
+                // dispatch(spotifyActions.updateSpotifyCode(code))
+
+                // dispatch(spotifyActions.updateSpotifyAccess(res.data.accessToken))
+
+                // dispatch(spotifyActions.updateSpotifyRefresh(res.data.refreshToken))
+
+                // dispatch(spotifyActions.updateSpotifyExpire(res.data.expiresIn))
 
 
-    return useAccess
+                //removes data from url and sets it back to root
+                // window.history.pushState({}, null, "/")
+                // let codePocket = "http://localhost:3000/menu"
+                // window.location.href = codePocket
+                // console.log(useAccess)
+                // console.log(useRefresh)
+                // console.log(useExpire)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [code, dispatch])
+
+
+
+    return accesstoken
 
 }
 
