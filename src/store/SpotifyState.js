@@ -5,10 +5,10 @@ const initialSpotifyState = {
     isSpotifyAuth: false,
     clientid: "50885eb87ce14757bdde10e7fb01f91a",
     clientsecret: "4acdaecbdc96463bbe8daee8d938550c",
-    authcode: "",
-    accesstoken: "empty for now",
-    refreshtoken: "empty for now",
-    expiresin: "empty for now",
+    authcode: "none",
+    accesstoken: "none",
+    refreshtoken: "none",
+    expiresin: "none",
 
 }
 
@@ -16,7 +16,7 @@ const spotifySlice = createSlice({
     name: "spotifyMusic",
     initialState: initialSpotifyState,
     reducers: {
-        updateSpotifyAuth(state, action) {
+        updateSpotifyAuth(state) {
             state.isSpotifyAuth = !state.isSpotifyAuth
         },
         updateSpotifyCode(state, action) {

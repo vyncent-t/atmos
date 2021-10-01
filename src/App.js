@@ -12,11 +12,11 @@ function App() {
             {/* <Route path="/" exact>
                 <Redirect to="/welcome" />
             </Route> */}
-            <Route path="/menu">
-                <MainMenuPage />
-            </Route>
             <Route path="/" exact>
                 <Intropage />
+            </Route>
+            <Route path="/menu">
+                <MainMenuPage />
             </Route>
             <Route path="/dashboard">
                 <Dashboard />

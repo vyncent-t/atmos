@@ -2,10 +2,9 @@
 import { useDispatch, useSelector } from "react-redux"
 import { spotifyActions } from "../store/SpotifyState"
 import { useLocation } from "react-router-dom"
-import { Fragment } from "react"
-import useAuth from "../server/spotifyAuth"
 import Welcome from "../components/Welcome"
 import WelcomeBack from "../components/WelcomeBack"
+
 
 
 //url used to authorize the spotify api and retrieve an access token along with the scope of parameters that we are asking permission for.
@@ -22,6 +21,7 @@ function Intropage() {
 
 
     const isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
+    const musicPassWord = useSelector((state) => state.spotify.authcode)
 
 
 
@@ -55,17 +55,19 @@ function Intropage() {
         window.location.href = url
     }
 
+    console.log(musicPassWord)
 
-    if (!locationCode) {
+    if (musicPassWord === "none") {
         return (
-            <Fragment>
-                <Welcome onRedirect={userSpotifyAuthHandler} />
-            </Fragment>
-        )
-    } else {
-        return (
-            <WelcomeBack />
+            <Welcome onRedirect={userSpotifyAuthHandler} />
         )
     }
+    if (musicPassWord.slice(1, 5) === "?code") {
+        return (
+            <WelcomeBack newCode={musicPassWord} />
+        )
+    }
+
+
 }
 export default Intropage

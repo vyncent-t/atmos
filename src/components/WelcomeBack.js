@@ -1,17 +1,18 @@
 import { Fragment } from "react"
 import { useSelector } from "react-redux"
 
-function Welcome(props) {
+function WelcomeBack(props) {
     const isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
     console.log(isAuth)
+
 
     return (
         <Fragment>
             <div className="mainpage">
                 <div div className="containerdiv" >
-                    <h1>Welcome to Atmos</h1>
+                    <h1>Welcome back!</h1>
                     <div className="pracmenu">
-                        <p>Welcome Back</p>
+                        <p>your code is {props.newCode}</p>
                         <button onClick={props.onRedirect}>authorize on spotify</button>
                     </div>
                 </div >
@@ -20,4 +21,4 @@ function Welcome(props) {
     )
 }
 
-export default Welcome
+export default WelcomeBack
