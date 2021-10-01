@@ -16,8 +16,8 @@ const spotifySlice = createSlice({
     name: "spotifyMusic",
     initialState: initialSpotifyState,
     reducers: {
-        updateSpotifyAuth(state, action) {
-            state.isSpotifyAuth = action.payload
+        updateSpotifyAuth(state) {
+            state.isSpotifyAuth = !state.isSpotifyAuth
         },
         updateSpotifyCode(state, action) {
             state.authcode = action.payload
@@ -33,6 +33,19 @@ const spotifySlice = createSlice({
         }
     }
 })
+
+
+export const saveSpotify = (res) => {
+    return async (dispatch) => {
+        await dispatch(
+            spotifyActions.updateSpotifyAccess(res.data.accessToken))
+        await dispatch(
+            spotifyActions.updateSpotifyRefresh(res.data.refreshToken))
+        await dispatch(
+            spotifyActions.updateSpotifyExpire(res.data.expiresIn))
+    }
+}
+
 
 export const spotifyActions = spotifySlice.actions
 

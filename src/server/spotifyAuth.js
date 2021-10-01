@@ -1,75 +1,67 @@
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { spotifyActions } from '../store/SpotifyState';
+import { saveSpotify, spotifyActions } from '../store/SpotifyState';
 import axios from 'axios';
 
 
-export default function useAuth(code) {
+function useAuth(code) {
+    const [useAccess, setAccess] = useState()
+    const [useRefresh, setRefresh] = useState()
+    const [useExpire, setExpire] = useState()
+
+    var authcode = useSelector((state) => state.spotify.authcode)
     var accesstoken = useSelector((state) => state.spotify.accesstoken)
-    // var authcode = useSelector((state) => state.spotify.authcode)
+    var refreshtoken = useSelector((state) => state.spotify.refreshtoken)
+    var expiresin = useSelector((state) => state.spotify.expiresin)
     var isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
 
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        axios
-            .post('http://localhost:3001/login', {
-                code,
-            }).then(res => {
-                console.log(res.data)
+    axios
+        .post('http://localhost:3001/login', {
+            code,
+        }).then(res => {
+            console.log(res.data)
 
-                dispatch(spotifyActions.updateSpotifyCode(code))
-
-                dispatch(spotifyActions.updateSpotifyAccess(res.data.accessToken))
-
-                dispatch(spotifyActions.updateSpotifyRefresh(res.data.refreshToken))
-
-                dispatch(spotifyActions.updateSpotifyExpire(res.data.expiresIn))
+            dispatch(saveSpotify(res))
+            setAccess(res.data.accessToken)
+            setRefresh(res.data.refreshToken)
+            setExpire(res.data.expiresIn)
 
 
-                console.log(accesstoken)
-                //removes data from url and sets it back to root
-                window.history.pushState({}, null, "/welcome")
-                // let codePocket = "http://localhost:3000/menu"
-                // window.location.href = codePocket
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }, [isAuth])
+            // console.log(res.data.accessToken)
+            // console.log(res.data.refreshToken)
+            // console.log(res.data.expiresIn)
+
+            // console.log("access token after")
+
+            // console.log(expiresin)
+            // dispatch(spotifyActions.updateSpotifyCode(code))
+
+            // dispatch(spotifyActions.updateSpotifyAccess(res.data.accessToken))
+
+            // dispatch(spotifyActions.updateSpotifyRefresh(res.data.refreshToken))
+
+            // dispatch(spotifyActions.updateSpotifyExpire(res.data.expiresIn))
 
 
-    //use effect method that runs whenever the refresh token or expiresIn timer runs out to set the new access token and new expiration time.
-    var refreshtoken = useSelector((state) => state.spotify.refreshtoken)
-    var expiresin = useSelector((state) => state.spotify.expiresin)
+            //removes data from url and sets it back to root
+            // window.history.pushState({}, null, "/")
+            // let codePocket = "http://localhost:3000/menu"
+            // window.location.href = codePocket
+            console.log(useAccess)
+            console.log(useRefresh)
+            console.log(useExpire)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
 
 
-    // useEffect(() => {
-
-    //     if (!refreshtoken || !expiresin) return
-
-    //     const interval = setInterval(() => {
-    //         axios
-    //             .post('http://localhost:3001/refresh', {
-    //                 refreshtoken,
-    //             })
-    //             .then(res => {
-
-    //                 dispatch(spotifyActions.updateSpotifyAccess(res.data.accessToken))
-
-    //                 dispatch(spotifyActions.updateSpotifyExpire(res.data.expiresIn))
-
-    //             })
-    //             .catch((err) => {
-    //                 console.log(err)
-    //             })
-    //     }, (expiresin - 600) * 1000)
-
-    //     return () => clearInterval(interval)
-    // }, [refreshtoken, expiresin])
-
-
-    return accesstoken
+    return useAccess
 
 }
+
+export default useAuth

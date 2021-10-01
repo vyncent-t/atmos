@@ -1,9 +1,11 @@
 
+
 import { useDispatch, useSelector } from "react-redux"
 import { spotifyActions } from "../store/SpotifyState"
 import { useLocation } from "react-router-dom"
 import Welcome from "../components/Welcome"
 import WelcomeBack from "../components/WelcomeBack"
+
 
 
 
@@ -15,9 +17,9 @@ import WelcomeBack from "../components/WelcomeBack"
 function Intropage() {
     const location = useLocation()
     console.log(location)
+    // the slice needs to be at 6 in order for the api call to work DO NOT TOUCH
     const locationCode = location.search.slice(6)
     console.log(`current location code from slice: ${locationCode}`)
-
 
 
     const authlink = useSelector((state) => state.spotify.spotifyAuthLink)
@@ -31,31 +33,32 @@ function Intropage() {
 
     const dispatch = useDispatch()
 
-    function userSpotifyAuthHandler() {
-        dispatch(spotifyActions.updateSpotifyCode(locationCode))
-        // window.location.href(AUTHORIZE)
-        requestSpotifyAuth()
+    function spotifyAuthToggler() {
+        dispatch(spotifyActions.updateSpotifyAuth())
     }
 
-    function spotifyAuthToggler(onoff) {
-        dispatch(spotifyActions.updateSpotifyAuth(onoff))
+    function userSpotifyAuthHandler() {
+        // dispatch(spotifyActions.updateSpotifyCode(locationCode))
+        window.location.href = authlink
+        // requestSpotifyAuth()
+        console.log(`current code from redirect button: ${musicPassword}`)
     }
 
 
     // const client_id = useSelector((state) => state.spotify.clientid)
     // const client_secret = useSelector((state) => state.spotify.clientsecret)
 
-    function requestSpotifyAuth() {
-        // const redirect_uri = "http://localhost:3000"
-        // const authlink = "https://accounts.spotify.com/authorize"
-        var url = authlink;
-        // url += "?client_id=" + client_id;
-        // url += "&response_type=code";
-        // url += "&redirect_uri=" + encodeURI(redirect_uri);
-        // // url += "&show_dialog=true";
-        // url += "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
-        window.location.href = url
-    }
+    // function requestSpotifyAuth() {
+    // const redirect_uri = "http://localhost:3000"
+    // const authlink = "https://accounts.spotify.com/authorize"
+    // var url = authlink;
+    // url += "?client_id=" + client_id;
+    // url += "&response_type=code";
+    // url += "&redirect_uri=" + encodeURI(redirect_uri);
+    // // url += "&show_dialog=true";
+    // // url += "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
+    // window.location.href = url
+    // }
 
     // first page load should fail, passes nothing into locationCode, should work on return
 
@@ -66,25 +69,22 @@ function Intropage() {
     console.log(`current refresh: ${musicRefresh}`)
     console.log(`current expire: ${musicEx}`)
 
-
-    if (locationCode === "") {
-        spotifyAuthToggler(false)
-    } else {
-        spotifyAuthToggler(true)
-    }
     console.log(`page loaded is auth ${isAuth}`)
 
+    if (locationCode.length > 10) {
+        dispatch(spotifyActions.updateSpotifyCode(locationCode))
+    }
 
-
-    if (isAuth === false) {
+    if (musicPassword === "none code") {
         return (
-            <Welcome onRedirect={userSpotifyAuthHandler} />
+            <Welcome userWelcome={spotifyAuthToggler} onRedirect={userSpotifyAuthHandler} />
         )
     } else {
         return (
             <WelcomeBack newCode={locationCode} />
         )
     }
+
 
 }
 export default Intropage
