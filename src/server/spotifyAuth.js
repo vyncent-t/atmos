@@ -7,7 +7,8 @@ import axios from 'axios';
 
 export default function useAuth(code) {
     var accesstoken = useSelector((state) => state.spotify.accesstoken)
-    var authcode = useSelector((state) => state.spotify.authcode)
+    // var authcode = useSelector((state) => state.spotify.authcode)
+    var isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
 
     const dispatch = useDispatch()
 
@@ -36,7 +37,7 @@ export default function useAuth(code) {
             .catch((err) => {
                 console.log(err)
             })
-    }, [authcode])
+    }, [isAuth])
 
 
     //use effect method that runs whenever the refresh token or expiresIn timer runs out to set the new access token and new expiration time.

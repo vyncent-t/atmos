@@ -1,4 +1,4 @@
-import useAuth from "../server/spotifyAuth"
+
 import { useDispatch, useSelector } from "react-redux"
 import { spotifyActions } from "../store/SpotifyState"
 import { useLocation } from "react-router-dom"
@@ -58,7 +58,7 @@ function Intropage() {
     }
 
     // first page load should fail, passes nothing into locationCode, should work on return
-    useAuth(locationCode)
+
 
     //console logging all state
     console.log(`current token: ${musicToken}`)
