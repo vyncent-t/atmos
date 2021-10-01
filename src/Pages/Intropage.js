@@ -16,22 +16,20 @@ function Intropage() {
     const location = useLocation()
     console.log(location)
     const locationCode = location.search.slice(6)
-    console.log(`current location code: ${locationCode}`)
+    console.log(`current location code from slice: ${locationCode}`)
 
 
 
+    const authlink = useSelector((state) => state.spotify.spotifyAuthLink)
     const isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
     const musicPassword = useSelector((state) => state.spotify.authcode)
     const musicToken = useSelector((state) => state.spotify.accesstoken)
+    const musicRefresh = useSelector((state) => state.spotify.refreshtoken)
+    const musicEx = useSelector((state) => state.spotify.expiresin)
 
 
 
     const dispatch = useDispatch()
-
-    function updateAccess(token) {
-        dispatch(spotifyActions.updateSpotifyAccess(token))
-    }
-
 
     function userSpotifyAuthHandler() {
         dispatch(spotifyActions.updateSpotifyCode(locationCode))
@@ -44,17 +42,12 @@ function Intropage() {
     }
 
 
-    const authlink = useSelector((state) => state.spotify.spotifyAuthLink)
     // const client_id = useSelector((state) => state.spotify.clientid)
     // const client_secret = useSelector((state) => state.spotify.clientsecret)
 
     function requestSpotifyAuth() {
-
         // const redirect_uri = "http://localhost:3000"
-
-
         // const authlink = "https://accounts.spotify.com/authorize"
-
         var url = authlink;
         // url += "?client_id=" + client_id;
         // url += "&response_type=code";
@@ -64,10 +57,14 @@ function Intropage() {
         window.location.href = url
     }
 
+    // first page load should fail, passes nothing into locationCode, should work on return
     useAuth(locationCode)
-    updateAccess(locationCode)
+
+    //console logging all state
     console.log(`current token: ${musicToken}`)
-    console.log(`current password: ${musicPassword}`)
+    console.log(`current code: ${musicPassword}`)
+    console.log(`current refresh: ${musicRefresh}`)
+    console.log(`current expire: ${musicEx}`)
 
 
     if (locationCode === "") {

@@ -7,15 +7,10 @@ import axios from 'axios';
 
 export default function useAuth(code) {
     var accesstoken = useSelector((state) => state.spotify.accesstoken)
-
-
     var authcode = useSelector((state) => state.spotify.authcode)
 
     const dispatch = useDispatch()
 
-    function updateAccess(token) {
-        dispatch(spotifyActions.updateSpotifyAccess(token))
-    }
     useEffect(() => {
         axios
             .post('http://localhost:3001/login', {
@@ -23,7 +18,9 @@ export default function useAuth(code) {
             }).then(res => {
                 console.log(res.data)
 
-                updateAccess(`${res.data.accessToken}`);
+                dispatch(spotifyActions.updateSpotifyCode(code))
+
+                dispatch(spotifyActions.updateSpotifyAccess(res.data.accessToken))
 
                 dispatch(spotifyActions.updateSpotifyRefresh(res.data.refreshToken))
 
@@ -32,7 +29,7 @@ export default function useAuth(code) {
 
                 console.log(accesstoken)
                 //removes data from url and sets it back to root
-                window.history.pushState({}, null, "/")
+                window.history.pushState({}, null, "/welcome")
                 // let codePocket = "http://localhost:3000/menu"
                 // window.location.href = codePocket
             })
