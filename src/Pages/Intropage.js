@@ -1,4 +1,4 @@
-
+import useAuth from "../server/spotifyAuth"
 import { useDispatch, useSelector } from "react-redux"
 import { spotifyActions } from "../store/SpotifyState"
 import { useLocation } from "react-router-dom"
@@ -16,25 +16,34 @@ function Intropage() {
     const location = useLocation()
     console.log(location)
     const locationCode = location.search.slice(6)
-    console.log(locationCode)
+    console.log(`current location code: ${locationCode}`)
 
 
 
     const isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
-    const musicPassWord = useSelector((state) => state.spotify.authcode)
+    const musicPassword = useSelector((state) => state.spotify.authcode)
+    const musicToken = useSelector((state) => state.spotify.accesstoken)
 
 
 
     const dispatch = useDispatch()
 
+    function updateAccess(token) {
+        dispatch(spotifyActions.updateSpotifyAccess(token))
+    }
+
+
     function userSpotifyAuthHandler() {
-        dispatch(spotifyActions.updateSpotifyAuth())
         dispatch(spotifyActions.updateSpotifyCode(locationCode))
         // window.location.href(AUTHORIZE)
         requestSpotifyAuth()
     }
 
-    console.log(isAuth)
+    function spotifyAuthToggler(onoff) {
+        dispatch(spotifyActions.updateSpotifyAuth(onoff))
+    }
+
+
     const authlink = useSelector((state) => state.spotify.spotifyAuthLink)
     // const client_id = useSelector((state) => state.spotify.clientid)
     // const client_secret = useSelector((state) => state.spotify.clientsecret)
@@ -55,19 +64,30 @@ function Intropage() {
         window.location.href = url
     }
 
-    console.log(musicPassWord)
+    useAuth(locationCode)
+    updateAccess(locationCode)
+    console.log(`current token: ${musicToken}`)
+    console.log(`current password: ${musicPassword}`)
 
-    if (musicPassWord === "none") {
+
+    if (locationCode === "") {
+        spotifyAuthToggler(false)
+    } else {
+        spotifyAuthToggler(true)
+    }
+    console.log(`page loaded is auth ${isAuth}`)
+
+
+
+    if (isAuth === false) {
         return (
             <Welcome onRedirect={userSpotifyAuthHandler} />
         )
-    }
-    if (musicPassWord.slice(1, 5) === "?code") {
+    } else {
         return (
-            <WelcomeBack newCode={musicPassWord} />
+            <WelcomeBack newCode={locationCode} />
         )
     }
-
 
 }
 export default Intropage

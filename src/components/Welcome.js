@@ -1,11 +1,11 @@
 import { Fragment } from "react"
 import { useSelector } from "react-redux"
-import useAuth from "../server/spotifyAuth"
+
 
 function Welcome(props) {
     const isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
-    console.log(isAuth)
-    useAuth(props.newCode)
+    console.log(`welcome comp loaded is auth ${isAuth}`)
+
     return (
         <Fragment>
             <div className="mainpage">

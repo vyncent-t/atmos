@@ -1,9 +1,10 @@
 import { Fragment } from "react"
 import { useSelector } from "react-redux"
 
+
 function WelcomeBack(props) {
     const isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
-    console.log(isAuth)
+    console.log(`welcome back comp loaded is auth ${isAuth}`)
 
 
     return (
@@ -12,7 +13,7 @@ function WelcomeBack(props) {
                 <div div className="containerdiv" >
                     <h1>Welcome back!</h1>
                     <div className="pracmenu">
-                        <p>your code is {props.newCode}</p>
+                        <div><p>your code is {props.newCode}</p></div>
                         <button onClick={props.onRedirect}>authorize on spotify</button>
                     </div>
                 </div >
