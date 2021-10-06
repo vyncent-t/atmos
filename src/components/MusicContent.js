@@ -28,26 +28,42 @@ function MusicContent() {
     }, [musicToken])
 
 
-    const musicDummyID = `1DFixLWuPkv3KT3TnV35m3`
+    // const musicDummyID = `1DFixLWuPkv3KT3TnV35m3`
 
+    var userMusicContent = `pending`
 
     spotifyApi.searchPlaylists(`${userMusic}`).then(
         (res) => {
+            //save to an array?
             console.log(`playlist res:`, res.body)
+            var playlistMusic = res.body.playlists.items
+            var playlistCodes = playlistMusic.map(playlist => {
+                return playlist.id
+            })
+            userMusicContent = playlistCodes
+            console.log("current content list", userMusicContent)
         }
     ).catch((err) => {
         console.log('Something went wrong!', err);
     })
-
     function contentToggleHandler() {
         dispatch(controlActions.toggleContentBox())
     }
 
+    console.log(userMusicContent[0])
+
     return (
         <div className="musiccontent">
-            <button onClick={contentToggleHandler}>Content on/off</button>
+            <div>
+                <button onClick={contentToggleHandler}>Content on/off</button>
+            </div>
+
             {showContent && <div>
-                <iframe title="playlist" src={`https://open.spotify.com/embed/album/${musicDummyID}`} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <div>
+                    <button>Prev Playlist</button>
+                    <button>Next Playlist</button>
+                </div>
+                <iframe title="playlist" src={`https://open.spotify.com/embed/playlist/37i9dQZF1DWWQRwui0ExPn`} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             </div>}
         </div>
     )
