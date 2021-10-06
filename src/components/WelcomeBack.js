@@ -9,7 +9,7 @@ function WelcomeBack(props) {
     console.log(`welcome back comp loaded is auth ${isAuth}`)
     console.log(`welcome back comp loaded is current access token ${accesstoken}`)
     var code = props.newCode
-
+    useAuth(code)
 
 
 
@@ -20,8 +20,8 @@ function WelcomeBack(props) {
                 <div div className="containerdiv" >
                     <h1>Welcome back!</h1>
                     <div className="pracmenu">
-                        <div><p>your code is {props.newCode}</p></div>
-                        <button onClick={useAuth(code)}>authorize on spotify</button>
+                        <div><p>Continue to the main menu!</p></div>
+                        <button onClick={props.onContinue}>Continue</button>
                     </div>
                 </div >
             </div >

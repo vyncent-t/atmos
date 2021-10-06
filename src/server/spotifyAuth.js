@@ -49,7 +49,7 @@ function useAuth(code) {
 
 
                 //removes data from url and sets it back to root
-                // window.history.pushState({}, null, "/")
+                window.history.pushState({}, null, "/")
                 // let codePocket = "http://localhost:3000/menu"
                 // window.location.href = codePocket
                 // console.log(useAccess)

@@ -1,6 +1,7 @@
 
 
 import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router"
 import { spotifyActions } from "../store/SpotifyState"
 import { useLocation } from "react-router-dom"
 import Welcome from "../components/Welcome"
@@ -15,6 +16,7 @@ import WelcomeBack from "../components/WelcomeBack"
 
 
 function Intropage() {
+    const history = useHistory()
     const location = useLocation()
     console.log(location)
     // the slice needs to be at 6 in order for the api call to work DO NOT TOUCH
@@ -44,7 +46,9 @@ function Intropage() {
         console.log(`current code from redirect button: ${musicPassword}`)
     }
 
-
+    function userContinue() {
+        history.push("/menu")
+    }
     // const client_id = useSelector((state) => state.spotify.clientid)
     // const client_secret = useSelector((state) => state.spotify.clientsecret)
 
@@ -81,7 +85,7 @@ function Intropage() {
         )
     } else {
         return (
-            <WelcomeBack newCode={locationCode} />
+            <WelcomeBack newCode={locationCode} onContinue={userContinue} />
         )
     }
 

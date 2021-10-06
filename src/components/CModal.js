@@ -16,7 +16,7 @@ function ConfModal(props) {
         <div className="menuConfirm">
             <p> Are you sure?</p>
             <button className="btn btn-secondary m-1" onClick={cancelHandler}>Cancel</button>
-            <button className="btn btn-success m-1" onClick={confirmHandler}><Link to="/dashboard"><span className="text-light">Continue</span></Link></button>
+            <button className="btn btn-success m-1" onClick={confirmHandler}><span className="text-light">Continue</span></button>
         </div>
     )
 }
