@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit"
 // setting the initail state object, this is the master state which will be an expanded object
 const initialContentState = {
     musicButtonChoice: "no music",
+    musicPlaylistCodes: ["no playlist"],
     videoButtonChoice: "no video",
     showCreateModal: false,
 }
@@ -15,6 +16,9 @@ const contentSlice = createSlice({
     reducers: {
         updateMusicContent(state, action) {
             state.musicButtonChoice = action.payload
+        },
+        updatePlaylists(state, action) {
+            state.musicPlaylistCodes = action.payload
         },
 
         updateVideoContent(state, action) {
