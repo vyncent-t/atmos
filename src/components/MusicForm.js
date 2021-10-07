@@ -28,8 +28,7 @@ function MusicForm(props) {
 
 
     function updateContent(content) {
-        userMusicContent = content
-        return userMusicContent
+        localStorage.setItem("playlistCodes", content[0])
     }
 
 
@@ -51,7 +50,7 @@ function MusicForm(props) {
     useEffect(() => {
         console.log("new playlist changes", userMusicContent)
         console.log("current playlist state", musicPlaylist)
-        localStorage.setItem("playlistCodes", musicPlaylist[0])
+
         dispatch(contentActions.updatePlaylists(userMusicContent))
     }, [userMusicContent])
 
