@@ -1,8 +1,9 @@
-import { useEffect } from "react"
+// import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { controlActions } from "../store/UserControls"
-import SpotifyWebApi from "spotify-web-api-node"
+import SpotifyMusicPlayer from "./SpotifyPlayer"
+// import SpotifyWebApi from "spotify-web-api-node"
 
 
 
@@ -16,6 +17,7 @@ function MusicContent() {
 
     // console.log(`spotify current search keyword from button is: ${userMusic}`)
     console.log(`spotify current token is: ${musicToken}`)
+
 
     // const spotifyApi = new SpotifyWebApi({
     //     clientId: `${musicid}`,
@@ -53,6 +55,8 @@ function MusicContent() {
         dispatch(controlActions.toggleContentBox())
     }
 
+    var currentPlaylist = 0
+
     // console.log(userMusicContent)
 
     return (
@@ -63,10 +67,11 @@ function MusicContent() {
 
             {showContent && <div>
                 <div>
-                    <button>Prev Playlist</button>
-                    <button>Next Playlist</button>
+                    <button onClick={() => currentPlaylist = --currentPlaylist}>Prev Playlist</button>
+                    <button onClick={() => currentPlaylist++}>Next Playlist</button>
                 </div>
-                <iframe title="playlist" src={`https://open.spotify.com/embed/playlist/${musicPlaylist[0]}`} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <SpotifyMusicPlayer />
+                {/* <iframe title="playlist" src={`https://open.spotify.com/embed/playlist/${musicPlaylist[(currentPlaylist)]}`} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> */}
             </div>}
         </div>
     )

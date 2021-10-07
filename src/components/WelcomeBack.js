@@ -8,6 +8,9 @@ function WelcomeBack(props) {
     var accesstoken = useSelector((state) => state.spotify.accesstoken)
     console.log(`welcome back comp loaded is auth ${isAuth}`)
     console.log(`welcome back comp loaded is current access token ${accesstoken}`)
+
+    localStorage.setItem("spotifyToken", `${accesstoken}`)
+
     var code = props.newCode
     useAuth(code)
 

@@ -11,7 +11,7 @@ function MusicForm(props) {
     var musicid = useSelector((state) => state.spotify.clientid)
     const musicToken = useSelector((state) => state.spotify.accesstoken)
     const musicChoice = useSelector((state) => state.content.musicButtonChoice)
-    const musicPlaylists = useSelector((state) => state.content.musicPlaylistCodes)
+    const musicPlaylist = useSelector((state) => state.content.musicPlaylistCodes)
 
     const dispatch = useDispatch()
 
@@ -40,7 +40,7 @@ function MusicForm(props) {
             console.log(`playlist res:`, res.body)
             var playlistMusic = res.body.playlists.items
             var playlistCodes = playlistMusic.map(playlist => {
-                return playlist.id
+                return playlist.uri
             })
             updateContent(playlistCodes)
         }
@@ -50,7 +50,8 @@ function MusicForm(props) {
 
     useEffect(() => {
         console.log("new playlist changes", userMusicContent)
-        console.log("current playlist state", musicPlaylists)
+        console.log("current playlist state", musicPlaylist)
+        localStorage.setItem("playlistCodes", musicPlaylist[0])
         dispatch(contentActions.updatePlaylists(userMusicContent))
     }, [userMusicContent])
 
