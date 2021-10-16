@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { contentActions } from "../store/Content"
+import { youtubeActions } from "../store/YouTubeState"
 import { Fragment } from "react"
 
 function VideoButton(props) {
@@ -7,7 +7,7 @@ function VideoButton(props) {
     const dispatch = useDispatch()
 
     const setVideoGenre = () => {
-        dispatch(contentActions.updateVideoContent(keyword))
+        dispatch(youtubeActions.updateChosen(keyword))
         console.log(`user chose ${keyword} as their video choice via button`)
     }
     return (

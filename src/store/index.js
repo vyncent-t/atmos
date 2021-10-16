@@ -4,6 +4,7 @@ import { configureStore } from "@reduxjs/toolkit"
 import contentReducer from "./Content"
 import controlReducer from "./UserControls"
 import spotifyReducer from "./SpotifyState"
+import youtubeReducer from "./YouTubeState"
 
 
 // configure store combines multiple slices in order to execute their reducers
@@ -12,6 +13,7 @@ const store = configureStore({
         content: contentReducer,
         controls: controlReducer,
         spotify: spotifyReducer,
+        youtube: youtubeReducer,
     }
 })
 

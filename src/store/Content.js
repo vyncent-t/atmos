@@ -5,7 +5,6 @@ import { createSlice } from "@reduxjs/toolkit"
 const initialContentState = {
     musicButtonChoice: "no music",
     musicPlaylistCodes: ["no playlist"],
-    videoButtonChoice: "no video",
     showCreateModal: false,
 }
 
@@ -19,10 +18,6 @@ const contentSlice = createSlice({
         },
         updatePlaylists(state, action) {
             state.musicPlaylistCodes = action.payload
-        },
-
-        updateVideoContent(state, action) {
-            state.videoButtonChoice = action.payload
         },
 
         showCreateModal(state) {
