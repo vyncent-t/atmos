@@ -1,14 +1,22 @@
-// import React from 'react';
-// import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-// function AtmosNavbar() {
+function AtmosNavbar() {
 
-//     return (
-//         <nav className="navbar navbar-light bg-light">
-//             <div className="container-fluid">
-//                 <a className="navbar-brand" href="#">Navbar</a>
-//             </div>
-//         </nav>)
-// }
+    return (
+        <nav className="navbar navbar-light bg-light">
+            <div className="container-fluid">
+                <p className="navbar-brand">Navbar</p>
+                <ul>
+                    <li>
+                        <Link to="/menu">Menu</Link>
+                    </li>
+                    <li>
+                        <Link to="Dashboard">Your Room</Link>
+                    </li>
+                </ul>
+            </div>
+        </nav>)
+}
 
-// export default AtmosNavbar
+export default AtmosNavbar

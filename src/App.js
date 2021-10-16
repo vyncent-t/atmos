@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import AtmosNavbar from './components/Navbar';
+import AtmosNavbar from './components/Navbar';
 import MainMenuPage from './pages/MainMenuPage'
 import { Route, Switch } from "react-router-dom"
 import Dashboard from './pages/Dashboard';
@@ -16,9 +16,11 @@ function App() {
                 <Intropage />
             </Route>
             <Route path="/menu">
+                <AtmosNavbar />
                 <MainMenuPage />
             </Route>
             <Route path="/dashboard">
+                <AtmosNavbar />
                 <Dashboard />
             </Route>
         </Switch>

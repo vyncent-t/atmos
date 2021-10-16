@@ -9,8 +9,10 @@ function Dashboard() {
             <div className="containerdiv">
                 {/* <AtmosNavbar /> */}
                 <h1>Dashboard</h1>
-                <VideoContent />
-                <MusicContent />
+                <span>
+                    <VideoContent />
+                    <MusicContent />
+                </span>
 
             </div>
         </div>

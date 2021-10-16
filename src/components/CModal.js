@@ -8,6 +8,7 @@ function ConfModal(props) {
         props.onCancel();
     }
     function confirmHandler() {
+        props.onCancel();
         history.push("/dashboard")
     }
 
