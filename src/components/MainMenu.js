@@ -48,7 +48,7 @@ function MainMenu(props) {
             </div>
             {showModal && <ConfModal onCancel={toggleModalHandler} onConfirm={useContinueContent} />}
             {showModal && <Backdrop onCancel={toggleModalHandler} />}
-            <VideoContent />
+            {/* <VideoContent /> */}
         </div>
     )
 }

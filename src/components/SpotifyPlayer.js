@@ -14,6 +14,7 @@ function SpotifyMusicPlayer(props) {
             <SpotifyPlayer
                 token={`${accessToken}`}
                 uris={[`${playlist}`]}
+                autoPlay={true}
             />
         </Fragment>
     )

@@ -19,7 +19,7 @@ function VideoContent() {
 
     function _onReady(e) {
         // access to player in all event handlers via event.target
-        e.target.pauseVideo();
+        // e.target.pauseVideo();
     }
 
     // var videoCodes = [
