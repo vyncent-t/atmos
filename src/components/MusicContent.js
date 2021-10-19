@@ -61,9 +61,9 @@ function MusicContent() {
 
     return (
         <div className="musiccontent">
-            <div>
+            {/* <div>
                 <button onClick={contentToggleHandler}>Toggle music on/off</button>
-            </div>
+            </div> */}
 
             {showContent && <div>
                 <SpotifyMusicPlayer />
