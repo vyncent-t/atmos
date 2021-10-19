@@ -17,9 +17,9 @@ function VideoContent() {
         setArrayNumber(arrayNum - 1)
     }
 
-    function _onReady(e) {
+    function onReady(e) {
         // access to player in all event handlers via event.target
-        // e.target.pauseVideo();
+        e.target.playVideo();
     }
 
     // var videoCodes = [
@@ -46,15 +46,15 @@ function VideoContent() {
 
     return (
         <div className="videocontent">
-            <p>current array item: {arrayNum}</p>
+            {/* <p>current array item: {arrayNum}</p>
             <p>current array length: {youtubeArray.length}</p>
-            <p>{youtubeArray[0]}</p>
+            <p>{youtubeArray[0]}</p> */}
             <span>
                 {arrayNum > 0 && <button onClick={prevHandler}>Prev</button>}
                 {arrayNum < youtubeArray.length - 1 && <button onClick={nextHandler}>Next</button>}
             </span>
             <div>
-                <YouTube videoId={youtubeCode} opts={opts} onReady={_onReady} />
+                <YouTube videoId={youtubeCode} opts={opts} onReady={onReady} />
                 {/* <iframe width="560" height="315"
                     src={currentVideo} title="YouTube video player"
                     frameborder="0"

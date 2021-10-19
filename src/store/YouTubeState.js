@@ -35,7 +35,6 @@ const initialYoutubeState = {
         ],
         Travel: [
             "https://www.youtube.com/watch?v=P6CLmbAwvMk",
-            "https://www.youtube.com/watch?v=ZOZOqbK86t0",
             "https://www.youtube.com/watch?v=fh3EdeGNKus",
             "https://www.youtube.com/watch?v=vXCB1zGGFiY",
             "https://www.youtube.com/watch?v=ADt_RisXY0U"

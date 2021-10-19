@@ -62,14 +62,10 @@ function MusicContent() {
     return (
         <div className="musiccontent">
             <div>
-                <button onClick={contentToggleHandler}>Content on/off</button>
+                <button onClick={contentToggleHandler}>Toggle music on/off</button>
             </div>
 
             {showContent && <div>
-                <div>
-                    <button onClick={() => currentPlaylist = --currentPlaylist}>Prev Playlist</button>
-                    <button onClick={() => currentPlaylist++}>Next Playlist</button>
-                </div>
                 <SpotifyMusicPlayer />
                 {/* <iframe title="playlist" src={`https://open.spotify.com/embed/playlist/${musicPlaylist[(currentPlaylist)]}`} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> */}
             </div>}
