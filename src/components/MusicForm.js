@@ -58,7 +58,7 @@ function MusicForm(props) {
 
 
     return (
-        <div className="pracmusicmenu">
+        <div className="pracmusicmenu bg-dark">
             <div>
                 <h2>Music Choices</h2>
             </div>

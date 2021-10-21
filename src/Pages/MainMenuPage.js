@@ -1,12 +1,20 @@
 import MainMenu from '../components/MainMenu'
+import content from '../images/contentSelect.png';
 
+const drop = {
+    filter: 'drop-shadow(12px 12px 12px )',
+    display: 'flex',
+justifyContent: 'center'
+}
 function MainMenuPage() {
     return (
         <div className="mainpage">
             <div className="containerdiv">
                 {/* <AtmosNavbar /> */}
-                <h1>Menu</h1>
-                <MainMenu text="Please select your content" />
+                <div style={drop}>
+                <img alt="" src={content}></img>
+                </div>
+                <MainMenu  />
             </div>
         </div>
     )

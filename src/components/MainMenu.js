@@ -8,19 +8,6 @@ import VideoForm from './VideoForm';
 import VideoContent from "./VideoContent";
 
 
-// import useAuth from '../useAuth'
-// import SpotifyWebApi from 'spotify-web-api-node'
-
-
-// const spotifyApi = new SpotifyWebApi({
-//     clientid: '50885eb87ce14757bdde10e7fb01f91a'
-// })
-
-// function SpotifyMusic() {
-
-
-
-// }
 
 function MainMenu(props) {
     const history = useHistory()
@@ -44,7 +31,7 @@ function MainMenu(props) {
                 <VideoForm />
             </div>
             <div className="pracactions">
-                <button className="btn btn-light" onClick={toggleModalHandler}>Create Atmosphere</button>
+                <button className="buttonStyles" onClick={toggleModalHandler}>Create Atmosphere</button>
             </div>
             {showModal && <ConfModal onCancel={toggleModalHandler} onConfirm={useContinueContent} />}
             {showModal && <Backdrop onCancel={toggleModalHandler} />}

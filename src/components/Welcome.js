@@ -1,9 +1,8 @@
-import { Fragment } from "react"
 import { useSelector } from "react-redux"
 import title from '../images/title.png';
 import tv from '../images/tvlogo.png';
 import button from '../images/switch.png';
-// import { AnimationWrapper } from 'react-hover-animation'
+import { AnimationWrapper } from 'react-hover-animation'
 
 //styling
 const styles = {
@@ -42,9 +41,20 @@ const buttonStyles = {
     display: 'flex',
     textAlign: "center",
     margin: "auto",
-    cursor: 'pointer'
+    cursor: 'pointer',
+    padding:'0.46em 1.6em',
+	border:'0.1em solid #FFFFFF',
+	borderRadius:'0.12em',
+	boxSizing: 'border-box',
+	textDecoration:'none',
+	fontFamily:'OCR A Std',
+	fontWeight:300,
+	color:'#FFFFFF',
+	textShadow: '0 0.04em 0.04em rgba(0,0,0,0.35)',
+	backgroundColor:'#7fb069',
    
 }
+
 
 function Welcome(props) {
 
@@ -55,18 +65,20 @@ function Welcome(props) {
         <div style={styles}>
             <div  style={align}>
                 <div >
-                <img alt="" src={title}></img>
+                <img alt="" className="img-fluid" src={title}></img>
                 <div style={drop}>
-        <img alt="" src={tv}></img>
+        <img className="img-fluid" alt="" src={tv}></img>
         </div>
         <p style={text} >A Visual Auditory Experience</p>
         <p style={texts} >*Premium Spotify Required</p>
-                    <div style={styles}>
+        <AnimationWrapper>
+                    <div >
                         <div>
-                            <button  style={buttonStyles} onClick={props.userWelcome}>Continue?</button>
+                            <button style={buttonStyles} onClick={props.userWelcome}>Continue?</button>
                         </div>
                         {isAuth && (<div><button style={buttonStyles} onClick={props.onRedirect}>Authorize on Spotify</button></div>)}
                     </div>
+                    </AnimationWrapper>
                 </div >
             </div >
         </div>

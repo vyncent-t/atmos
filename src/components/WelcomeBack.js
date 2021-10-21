@@ -1,7 +1,30 @@
 import useAuth from "../server/spotifyAuth"
-import { Fragment } from "react"
 import { useSelector } from "react-redux"
+import { AnimationWrapper } from 'react-hover-animation'
 
+const buttonStyles = {
+    display: 'flex',
+    textAlign: "center",
+    margin: "auto",
+    cursor: 'pointer',
+    padding:'0.46em 1.6em',
+	border:'0.1em solid #FFFFFF',
+	borderRadius:'0.12em',
+	boxSizing: 'border-box',
+	textDecoration:'none',
+	fontFamily:'OCR A Std',
+	fontWeight:300,
+	color:'#FFFFFF',
+	textShadow: '0 0.04em 0.04em rgba(0,0,0,0.35)',
+	backgroundColor:'#7fb069',
+   
+}
+const styles = {
+    margin: 'none',
+    background: '#7fb069',
+    height: '100vh',
+    width: '100%'
+}
 
 function WelcomeBack(props) {
     const isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
@@ -18,17 +41,12 @@ function WelcomeBack(props) {
 
 
     return (
-        <Fragment>
-            <div className="mainpage">
-                <div div className="containerdiv" >
-                    <h1>Welcome back!</h1>
-                    <div className="pracmenu">
-                        <div><p>Continue to the main menu!</p></div>
-                        <button onClick={props.onContinue}>Continue</button>
-                    </div>
-                </div >
-            </div >
-        </Fragment>
+        <div style={styles}>
+            
+            <AnimationWrapper>
+                        <button style={buttonStyles} onClick={props.onContinue}>Enter</button>
+            </AnimationWrapper>
+        </div>
     )
 }
 
