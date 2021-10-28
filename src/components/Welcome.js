@@ -67,14 +67,14 @@ function Welcome(props) {
                 <div >
                 <img alt="" className="img-fluid" src={title}></img>
                 <div style={drop}>
-        <img className="img-fluid" alt="" src={tv}></img>
+        <img className="img-fluid mb-3" alt="" src={tv}></img>
         </div>
         <p style={text} >A Visual Auditory Experience</p>
         <p style={texts} >*Premium Spotify Required</p>
         <AnimationWrapper>
                     <div >
                         <div>
-                            <button style={buttonStyles} onClick={props.userWelcome}>Continue?</button>
+                            <button className="my-2"style={buttonStyles} onClick={props.userWelcome}>Continue?</button>
                         </div>
                         {isAuth && (<div><button style={buttonStyles} onClick={props.onRedirect}>Authorize on Spotify</button></div>)}
                     </div>

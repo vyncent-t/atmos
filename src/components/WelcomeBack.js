@@ -1,6 +1,8 @@
 import useAuth from "../server/spotifyAuth"
 import { useSelector } from "react-redux"
 import { AnimationWrapper } from 'react-hover-animation'
+import title from '../images/title.png';
+import welcome from '../images/welcome.png';
 
 const buttonStyles = {
     display: 'flex',
@@ -19,6 +21,17 @@ const buttonStyles = {
 	backgroundColor:'#7fb069',
    
 }
+
+const drop = {
+    filter: 'drop-shadow(40px 20px 12px )',
+    display: 'flex',
+justifyContent: 'center'
+}
+
+const align = {
+    display: 'flex',
+    justifyContent: 'center'
+    }
 const styles = {
     margin: 'none',
     background: '#7fb069',
@@ -42,11 +55,19 @@ function WelcomeBack(props) {
 
     return (
         <div style={styles}>
-            
+        <div  style={align}>
+            <div >
+           
+            <div style={drop}>
+    <img className="img-fluid" alt="" src={welcome}></img>
+    </div>
             <AnimationWrapper>
                         <button style={buttonStyles} onClick={props.onContinue}>Enter</button>
             </AnimationWrapper>
         </div>
+        </div>
+        </div>
+       
     )
 }
 

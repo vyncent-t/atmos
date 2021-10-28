@@ -56,7 +56,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	border: none;
-	width: 80%;
+	width: 100%;
 	height: auto;
 	font-family:'OCR A Std';
 } 
@@ -114,7 +114,7 @@ body {
 	box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
 	margin: 1rem;
 	width: 45%;
-	height: 30em;
+	height: 50em;
 }
 
 .musiccontent {
@@ -160,7 +160,7 @@ body {
 
 .buttonStyles{
 	display:flex;
-	padding:0.46em 1.6em;
+	padding:0.46em 1.6em ;
 	border:0.1em solid #FFFFFF;
 	margin:'auto';
 	text-align:center;
@@ -170,14 +170,12 @@ body {
 	font-family:'OCR A Std';
 	font-weight:300;
 	color:#FFFFFF;
-	text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-     background-color:'#7fb069';
+    background-color:rgb(33, 37, 41);
 	cursor: 'pointer';
 	transition: all 0.15s;
 	align-items: center;
 	}
 	.buttonStyles:hover{
-	text-shadow: 0 0 2em rgba(255,255,255,1);
 	color: #000000;;
 	border-color:#000000;
 	}

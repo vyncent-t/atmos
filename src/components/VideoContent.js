@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { useState } from "react"
 import YouTube from "react-youtube"
+import MusicContent from "./MusicContent"
 
 var getYouTubeID = require('get-youtube-id')
 
@@ -36,8 +37,8 @@ function VideoContent() {
     }
 
     const opts = {
-        height: '390',
-        width: '640',
+        height: '490',
+        width: '690',
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
             autoplay: 1,
@@ -45,12 +46,12 @@ function VideoContent() {
     }
 
     return (
-        <div className="videocontent">
+        <div className="videocontent my-5">
             {/* <p>current array item: {arrayNum}</p>
             <p>current array length: {youtubeArray.length}</p>
             <p>{youtubeArray[0]}</p> */}
-            <span>
-                {arrayNum > 0 && <button onClick={prevHandler}>Prev</button>}
+            <span >
+                {arrayNum > 0 && <button  onClick={prevHandler}>Prev</button>}
                 {arrayNum < youtubeArray.length - 1 && <button onClick={nextHandler}>Next</button>}
             </span>
             <div>
@@ -61,7 +62,9 @@ function VideoContent() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe> */}
             </div>
+            <MusicContent/>
         </div>
+        
     )
 }
 

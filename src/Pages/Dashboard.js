@@ -8,10 +8,10 @@ function Dashboard() {
         <div className="mainpage">
             <div className="containerdiv">
                 {/* <AtmosNavbar /> */}
-                <h1>Dashboard</h1>
-                <span>
+                
+                <span className="pracmenu">
                     <VideoContent />
-                    <MusicContent />
+                   
                 </span>
 
             </div>

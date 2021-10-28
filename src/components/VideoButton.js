@@ -12,7 +12,8 @@ function VideoButton(props) {
     }
     return (
         <Fragment>
-            <button className="btn btn-info text-light m-1" onClick={setVideoGenre}>{keyword}</button>
+            <button className="buttonStyles" onClick={setVideoGenre}>{keyword}</button>
+            &nbsp;
         </Fragment >
     )
 }
