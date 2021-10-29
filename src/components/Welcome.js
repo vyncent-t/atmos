@@ -4,6 +4,7 @@ import tv from '../images/tvlogo.png';
 import button from '../images/switch.png';
 import { AnimationWrapper } from 'react-hover-animation'
 
+
 //styling
 const styles = {
     margin: 'none',
