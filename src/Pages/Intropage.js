@@ -80,12 +80,13 @@ function Intropage() {
     }
 
     if (musicPassword === "none code") {
+
         return (
-            <Welcome userWelcome={spotifyAuthToggler} onRedirect={userSpotifyAuthHandler} />
+           <div> <Welcome userWelcome={spotifyAuthToggler} onRedirect={userSpotifyAuthHandler} /></div>
         )
     } else {
         return (
-            <WelcomeBack newCode={locationCode} onContinue={userContinue} />
+          <div>  <WelcomeBack newCode={locationCode} onContinue={userContinue} /></div>
         )
     }
 

@@ -1,6 +1,6 @@
 body {
 	font-family: sans-serif;
-	margin: 3rem;
+	/* margin: 3rem; */
 	background-color: #7fb069;
 	
 }
@@ -11,7 +11,7 @@ body {
 	background-color: rgb(248, 248, 248);
 	height: 100%;
 	width: 100%;
-} */
+} 
 
  .containerdiv {
 	display: flex;
@@ -48,7 +48,7 @@ body {
 
 .pracbtn--alt:hover {
 	background-color: #f8dae9;
-} */
+} 
 
  .pracmenu {
 	align-self: center;
@@ -181,3 +181,4 @@ body {
 	}
 
 	
+*/

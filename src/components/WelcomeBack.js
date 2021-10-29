@@ -3,41 +3,42 @@ import { useSelector } from "react-redux"
 import { AnimationWrapper } from 'react-hover-animation'
 import title from '../images/title.png';
 import welcome from '../images/welcome.png';
+import styles from './welcomeStyles.module.css'
 
-const buttonStyles = {
-    display: 'flex',
-    textAlign: "center",
-    margin: "auto",
-    cursor: 'pointer',
-    padding:'0.46em 1.6em',
-	border:'0.1em solid #FFFFFF',
-	borderRadius:'0.12em',
-	boxSizing: 'border-box',
-	textDecoration:'none',
-	fontFamily:'OCR A Std',
-	fontWeight:300,
-	color:'#FFFFFF',
-	textShadow: '0 0.04em 0.04em rgba(0,0,0,0.35)',
-	backgroundColor:'#7fb069',
+// const buttonStyles = {
+//     display: 'flex',
+//     textAlign: "center",
+//     margin: "auto",
+//     cursor: 'pointer',
+//     padding:'0.46em 1.6em',
+// 	border:'0.1em solid #FFFFFF',
+// 	borderRadius:'0.12em',
+// 	boxSizing: 'border-box',
+// 	textDecoration:'none',
+// 	fontFamily:'OCR A Std',
+// 	fontWeight:300,
+// 	color:'#FFFFFF',
+// 	textShadow: '0 0.04em 0.04em rgba(0,0,0,0.35)',
+// 	backgroundColor:'#7fb069',
    
-}
+// }
 
-const drop = {
-    filter: 'drop-shadow(40px 20px 12px )',
-    display: 'flex',
-justifyContent: 'center'
-}
+// const drop = {
+//     filter: 'drop-shadow(40px 20px 12px )',
+//     display: 'flex',
+// justifyContent: 'center'
+// }
 
-const align = {
-    display: 'flex',
-    justifyContent: 'center'
-    }
-const styles = {
-    margin: 'none',
-    background: '#7fb069',
-    height: '100vh',
-    width: '100%'
-}
+// const align = {
+//     display: 'flex',
+//     justifyContent: 'center'
+//     }
+// const styles = {
+//     margin: 'none',
+//     background: '#7fb069',
+//     height: '100vh',
+//     width: '100%'
+// }
 
 function WelcomeBack(props) {
     const isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
@@ -54,15 +55,15 @@ function WelcomeBack(props) {
 
 
     return (
-        <div style={styles}>
-        <div  style={align}>
+        <div className={styles.bg}>
+        <div  className={styles.align}>
             <div >
            
-            <div style={drop}>
+            <div className={styles.drop}>
     <img className="img-fluid" alt="" src={welcome}></img>
     </div>
             <AnimationWrapper>
-                        <button style={buttonStyles} onClick={props.onContinue}>Enter</button>
+                        <button className={styles.buttonStyles} onClick={props.onContinue}>Enter</button>
             </AnimationWrapper>
         </div>
         </div>

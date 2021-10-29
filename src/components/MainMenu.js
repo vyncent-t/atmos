@@ -7,24 +7,8 @@ import MusicForm from './MusicForm';
 import VideoForm from './VideoForm';
 import VideoContent from "./VideoContent";
 import { AnimationWrapper } from 'react-hover-animation'
+import styles from './welcomeStyles.module.css'
 
-const buttonStyles = {
-    display: 'flex',
-    textAlign: "center",
-
-    cursor: 'pointer',
-    padding:'0.46em 1.6em',
-	border:'0.1em solid #FFFFFF',
-	borderRadius:'0.12em',
-	boxSizing: 'border-box',
-	textDecoration:'none',
-	fontFamily:'OCR A Std',
-	fontWeight:300,
-	color:'#FFFFFF',
-	textShadow: '0 0.04em 0.04em rgba(0,0,0,0.35)',
-	backgroundColor:'#7fb069',
-   
-}
 
 function MainMenu(props) {
     const history = useHistory()
@@ -50,7 +34,7 @@ function MainMenu(props) {
             <div className="pracactions">
                 <AnimationWrapper>
                
-             <button className="my-5" style={buttonStyles} onClick={toggleModalHandler}>Create Atmosphere</button>
+             <button className="my-5" className={styles.buttonStyles} onClick={toggleModalHandler}>Create Atmosphere</button>
             </AnimationWrapper></div>
             {showModal && <ConfModal onCancel={toggleModalHandler} onConfirm={useContinueContent} />}
             {showModal && <Backdrop onCancel={toggleModalHandler} />}
