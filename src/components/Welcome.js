@@ -32,7 +32,7 @@ function Welcome(props) {
                                     <button className="btn btn-success" onClick={props.userWelcome}>Agree</button>
                                 </div>)}
                             {isAuth && (<div>
-                                <p className={styles.texts} >*NOTE* Thank you! You will need to be redirected to the spotify website in order to obtain your credentials, you will be redirected back here once you're done!</p>
+                                <p className={styles.texts} >*NOTE* Thank you! You will need to be redirected to the spotify website in order to obtain your credentials, you will be redirected back once you're done!</p>
                                 <button className="btn btn-success" onClick={props.onRedirect}>Authorize on Spotify</button>
                             </div>)}
                         </div>
