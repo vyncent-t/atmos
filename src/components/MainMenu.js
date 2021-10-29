@@ -6,21 +6,9 @@ import Backdrop from './Backdrop'
 import MusicForm from './MusicForm';
 import VideoForm from './VideoForm';
 import VideoContent from "./VideoContent";
+import { AnimationWrapper } from 'react-hover-animation'
+import styles from './welcomeStyles.module.css'
 
-
-// import useAuth from '../useAuth'
-// import SpotifyWebApi from 'spotify-web-api-node'
-
-
-// const spotifyApi = new SpotifyWebApi({
-//     clientid: '50885eb87ce14757bdde10e7fb01f91a'
-// })
-
-// function SpotifyMusic() {
-
-
-
-// }
 
 function MainMenu(props) {
     const history = useHistory()
@@ -39,13 +27,15 @@ function MainMenu(props) {
     return (
         <div className="pracmenu">
             <h2>{props.text}</h2>
-            <div className="formContainer">
+            <div className="formContainer my-3">
                 <MusicForm />
                 <VideoForm />
             </div>
             <div className="pracactions">
-                <button className="btn btn-light" onClick={toggleModalHandler}>Create Atmosphere</button>
-            </div>
+                <AnimationWrapper>
+               
+             <button className="my-5" className={styles.buttonStyles} onClick={toggleModalHandler}>Create Atmosphere</button>
+            </AnimationWrapper></div>
             {showModal && <ConfModal onCancel={toggleModalHandler} onConfirm={useContinueContent} />}
             {showModal && <Backdrop onCancel={toggleModalHandler} />}
             {/* <VideoContent /> */}

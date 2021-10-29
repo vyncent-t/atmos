@@ -1,24 +1,29 @@
 body {
 	font-family: sans-serif;
-	margin: 3rem;
-	background-color: #022236;
+	/* margin: 3rem; */
+	background-color: #7fb069;
+	
 }
 
-.mainpage {
+/* .mainpage {
 	display: flex;
 	justify-content: center;
 	background-color: rgb(248, 248, 248);
 	height: 100%;
 	width: 100%;
-}
+} 
 
-.containerdiv {
+ .containerdiv {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
 	align-self: center;
-	background-color: rgb(54, 133, 179);
+	background-color: #7fb069;
 	width: 100%;
-}
+	
+} 
 
 /* .pracbtn {
 	font: inherit;
@@ -43,22 +48,18 @@ body {
 
 .pracbtn--alt:hover {
 	background-color: #f8dae9;
-} */
+} 
 
-.pracmenu {
+ .pracmenu {
 	align-self: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	color: white;
-	background-color: rgba(23, 23, 36, 0.959);
-	border-radius: 25px;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-	padding: 1rem;
-	margin: 1rem;
-	width: 80%;
+	border: none;
+	width: 100%;
 	height: auto;
-}
+	font-family:'OCR A Std';
+} 
 
 .formContainer {
 	color: white;
@@ -66,9 +67,9 @@ body {
 	flex-direction: row;
 	align-self: center;
 	justify-content: space-around;
-	width: 90%;
+	width: 100%;
 	height: 50%;
-	padding: 1em;
+	
 }
 
 .menubuttons {
@@ -82,7 +83,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(113, 216, 87);
+	background-color:#000000;
 	border-radius: 10%;
 	box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
 	margin: 1rem;
@@ -95,7 +96,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(83, 104, 197);
+	background-color:#000000;
 	border-radius: 10%;
 	box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
 	margin: 1rem;
@@ -108,12 +109,12 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(83, 104, 197);
+	background-color: #000000;
 	border-radius: 10%;
 	box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
 	margin: 1rem;
 	width: 45%;
-	height: 30em;
+	height: 50em;
 }
 
 .musiccontent {
@@ -121,7 +122,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(113, 216, 87);
+	background-color: #000000;
 	border-radius: 10%;
 	box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.5);
 	margin: 1rem;
@@ -130,7 +131,7 @@ body {
 }
 
 .pracactions {
-	text-align: right;
+	text-align: center;
 }
 
 .menuConfirm {
@@ -156,3 +157,28 @@ body {
 	top: 0;
 	left: 0;
 }
+
+.buttonStyles{
+	display:flex;
+	padding:0.46em 1.6em ;
+	border:0.1em solid #FFFFFF;
+	margin:'auto';
+	text-align:center;
+	border-radius:0.12em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-family:'OCR A Std';
+	font-weight:300;
+	color:#FFFFFF;
+    background-color:rgb(33, 37, 41);
+	cursor: 'pointer';
+	transition: all 0.15s;
+	align-items: center;
+	}
+	.buttonStyles:hover{
+	color: #000000;;
+	border-color:#000000;
+	}
+
+	
+*/
