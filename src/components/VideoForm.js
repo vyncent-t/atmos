@@ -40,19 +40,24 @@ function VideoForm() {
 
 
     return (
-        <div className="videomenu bg-dark">
-            <div>
-                <h2>Visual Choices</h2>
-            </div>
-            <div>
-                <p>{`Your current video genre: ${videoChoice}`}</p>
-            </div>
-            <div className="menubuttons">
-                <VideoButton videoKeyword="Beach" />
-                <VideoButton videoKeyword="Waterfall" />
-                <VideoButton videoKeyword="City" />
-                <VideoButton videoKeyword="Forest" />
-                <VideoButton videoKeyword="Travel" />
+
+        <div className="card bg-dark m-4">
+            <div className="card-body">
+                <div className="d-flex flex-column justify-content-center">
+                    <div className="card-title">
+                        <h2>Visual Choices</h2>
+                    </div>
+                    <div className="card-text">
+                        <p>{`Your current video genre: ${videoChoice}`}</p>
+                    </div>
+                    <div className="d-flex flex-column justify-content-center">
+                        <VideoButton videoKeyword="Beach" />
+                        <VideoButton videoKeyword="Waterfall" />
+                        <VideoButton videoKeyword="City" />
+                        <VideoButton videoKeyword="Forest" />
+                        <VideoButton videoKeyword="Travel" />
+                    </div>
+                </div>
             </div>
         </div>
     )

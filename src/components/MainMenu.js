@@ -1,43 +1,24 @@
-import { useDispatch, useSelector } from "react-redux"
-import { contentActions } from "../store/Content"
-import { useHistory } from "react-router";
-import ConfModal from './CModal';
-import Backdrop from './Backdrop'
+import { Link } from "react-router-dom";
 import MusicForm from './MusicForm';
 import VideoForm from './VideoForm';
-import VideoContent from "./VideoContent";
+
 import { AnimationWrapper } from 'react-hover-animation'
 import styles from './MainMenuStyles.module.css'
 
 
 function MainMenu(props) {
-    const history = useHistory()
-    const dispatch = useDispatch()
-    const showModal = useSelector((state) => state.content.showCreateModal)
-
-
-    function useContinueContent() {
-        history.push("/dashboard")
-    }
-
-    function toggleModalHandler() {
-        dispatch(contentActions.showCreateModal())
-    }
-
     return (
         <div className={styles.mainMenu}>
-            <h2>{props.text}</h2>
+            <h2>Please select your content</h2>
             <div className={styles.formContainer}>
                 <MusicForm />
                 <VideoForm />
             </div>
-            <div className={styles.pracactions}>
+            <div>
                 <AnimationWrapper>
-                    <button className="my-5 btn btn-light" onClick={toggleModalHandler}>Create Atmosphere</button>
+                    <Link to="/dashboard" className="m-3 btn btn-success">Create Atmos
+                    </Link>
                 </AnimationWrapper></div>
-            {showModal && <ConfModal onCancel={toggleModalHandler} onConfirm={useContinueContent} />}
-            {showModal && <Backdrop onCancel={toggleModalHandler} />}
-            {/* <VideoContent /> */}
         </div>
     )
 }

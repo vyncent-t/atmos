@@ -1,6 +1,8 @@
+import styles from './MainMenuStyles.module.css'
+
 function Backdrop(props) {
     return (
-        <div className="pracbackdrop" onClick={props.onCancel} />
+        <div className={styles.backdrop} onClick={props.onCancel} />
     )
 }
 

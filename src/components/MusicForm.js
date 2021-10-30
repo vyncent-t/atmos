@@ -58,19 +58,23 @@ function MusicForm(props) {
 
 
     return (
-        <div className="pracmusicmenu bg-dark">
-            <div>
-                <h2>Music Choices</h2>
-            </div>
-            <div>
-                <p>{`Your current music choice: ${musicChoice}`}</p>
-            </div>
-            <div className="menubuttons">
-                <MusicButton musicKeyword="Piano" />
-                <MusicButton musicKeyword="Jazz" />
-                <MusicButton musicKeyword="Acoustic" />
-                <MusicButton musicKeyword="Lofi" />
-                <MusicButton musicKeyword="Yoga" />
+        <div className="card bg-dark m-4">
+            <div className="card-body">
+                <div className="d-flex flex-column justify-content-center">
+                    <div className="card-title">
+                        <h2>Music Choices</h2>
+                    </div>
+                    <div className="card-text">
+                        <p>{`Your current music choice: ${musicChoice}`}</p>
+                    </div>
+                    <div className="d-flex flex-column justify-content-center">
+                        <MusicButton musicKeyword="Piano" />
+                        <MusicButton musicKeyword="Jazz" />
+                        <MusicButton musicKeyword="Acoustic" />
+                        <MusicButton musicKeyword="Lofi" />
+                        <MusicButton musicKeyword="Yoga" />
+                    </div>
+                </div>
             </div>
         </div>
     )

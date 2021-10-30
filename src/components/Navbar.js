@@ -12,9 +12,11 @@ function AtmosNavbar() {
 
     return (
         <nav className="bg-dark">
-            <div className="container-fluid">
-            <img alt="menu" src={title}></img>
-                <div className="navbarbtn d-flex justify-content-end">
+            <div className="container-fluid d-flex justify-content-between">
+                <div className="pb-4">
+                    <img alt="menu" src={title}></img>
+                </div>
+                <div className="navbarbtn d-flex align-self-center">
                     <li>
                         <Link to="/menu" ><img alt="menu" style={buttonStyles} src={menu}></img></Link>
                     </li>

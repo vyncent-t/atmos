@@ -28,7 +28,6 @@ function WelcomeBack(props) {
                 <div className={styles.drop}>
                     <img className="img-fluid" alt="" src={welcome}></img>
                 </div>
-
                 <div className="card text-center">
                     <div className="card-body">
                         <h5 className="card-title">Welcome to atmos! </h5>
@@ -40,7 +39,6 @@ function WelcomeBack(props) {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div >
     )

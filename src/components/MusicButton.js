@@ -12,7 +12,7 @@ function MusicButton(props) {
     }
     return (
         <Fragment>
-            <button className="buttonStyles" onClick={setMusicGenre}>{keyword}</button>
+            <button className="btn btn-secondary" onClick={setMusicGenre}>{keyword}</button>
             &nbsp;
         </Fragment>
     )
