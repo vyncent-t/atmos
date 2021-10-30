@@ -7,7 +7,7 @@ import MusicForm from './MusicForm';
 import VideoForm from './VideoForm';
 import VideoContent from "./VideoContent";
 import { AnimationWrapper } from 'react-hover-animation'
-import styles from './welcomeStyles.module.css'
+import styles from './MainMenuStyles.module.css'
 
 
 function MainMenu(props) {
@@ -25,17 +25,16 @@ function MainMenu(props) {
     }
 
     return (
-        <div className="pracmenu">
+        <div className={styles.mainMenu}>
             <h2>{props.text}</h2>
-            <div className="formContainer my-3">
+            <div className={styles.formContainer}>
                 <MusicForm />
                 <VideoForm />
             </div>
-            <div className="pracactions">
+            <div className={styles.pracactions}>
                 <AnimationWrapper>
-               
-             <button className="my-5" className={styles.buttonStyles} onClick={toggleModalHandler}>Create Atmosphere</button>
-            </AnimationWrapper></div>
+                    <button className="my-5 btn btn-light" onClick={toggleModalHandler}>Create Atmosphere</button>
+                </AnimationWrapper></div>
             {showModal && <ConfModal onCancel={toggleModalHandler} onConfirm={useContinueContent} />}
             {showModal && <Backdrop onCancel={toggleModalHandler} />}
             {/* <VideoContent /> */}

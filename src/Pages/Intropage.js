@@ -6,6 +6,7 @@ import { spotifyActions } from "../store/SpotifyState"
 import { useLocation } from "react-router-dom"
 import Welcome from "../components/Welcome"
 import WelcomeBack from "../components/WelcomeBack"
+import styles from '../components/welcomeStyles.module.css'
 
 
 
@@ -72,7 +73,6 @@ function Intropage() {
     console.log(`current code: ${musicPassword}`)
     console.log(`current refresh: ${musicRefresh}`)
     console.log(`current expire: ${musicEx}`)
-
     console.log(`page loaded is auth ${isAuth}`)
 
     if (locationCode.length > 10) {
@@ -82,11 +82,15 @@ function Intropage() {
     if (musicPassword === "none code") {
 
         return (
-           <div> <Welcome userWelcome={spotifyAuthToggler} onRedirect={userSpotifyAuthHandler} /></div>
+            <div className={styles.bg}>
+                <Welcome userWelcome={spotifyAuthToggler} onRedirect={userSpotifyAuthHandler} />
+            </div>
         )
     } else {
         return (
-          <div>  <WelcomeBack newCode={locationCode} onContinue={userContinue} /></div>
+            <div className={styles.bg}>
+                <WelcomeBack newCode={locationCode} onContinue={userContinue} />
+            </div>
         )
     }
 

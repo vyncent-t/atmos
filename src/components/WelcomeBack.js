@@ -20,7 +20,7 @@ import styles from './welcomeStyles.module.css'
 // 	color:'#FFFFFF',
 // 	textShadow: '0 0.04em 0.04em rgba(0,0,0,0.35)',
 // 	backgroundColor:'#7fb069',
-   
+
 // }
 
 // const drop = {
@@ -56,19 +56,18 @@ function WelcomeBack(props) {
 
     return (
         <div className={styles.bg}>
-        <div  className={styles.align}>
-            <div >
-           
-            <div className={styles.drop}>
-    <img className="img-fluid" alt="" src={welcome}></img>
-    </div>
-            <AnimationWrapper>
-                        <button className={styles.buttonStyles} onClick={props.onContinue}>Enter</button>
-            </AnimationWrapper>
+            <div className={styles.containerdiv}>
+                <div className={styles.drop}>
+                    <img className="img-fluid" alt="" src={welcome}></img>
+                </div>
+
+                <div>
+                    <AnimationWrapper>
+                        <button className=" m-4 btn btn-success" onClick={props.onContinue}>Enter</button>
+                    </AnimationWrapper>
+                </div>
+            </div>
         </div>
-        </div>
-        </div>
-       
     )
 }
 
