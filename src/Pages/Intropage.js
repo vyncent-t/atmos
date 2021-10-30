@@ -73,6 +73,7 @@ function Intropage() {
     console.log(`current code: ${musicPassword}`)
     console.log(`current refresh: ${musicRefresh}`)
     console.log(`current expire: ${musicEx}`)
+
     console.log(`page loaded is auth ${isAuth}`)
 
     if (locationCode.length > 10) {
