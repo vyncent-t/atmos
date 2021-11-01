@@ -1,4 +1,3 @@
-import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { useState } from "react"
 import YouTube from "react-youtube"
@@ -7,7 +6,8 @@ import MusicContent from "./MusicContent"
 var getYouTubeID = require('get-youtube-id')
 
 function VideoContent() {
-    const youtubeArray = useSelector((state) => state.youtube.currentContent)
+
+    let totalVideoAvailable = localStorage.getItem("videocodelength")
     const [arrayNum, setArrayNumber] = useState(0)
 
     function nextHandler() {
@@ -23,13 +23,9 @@ function VideoContent() {
         e.target.playVideo();
     }
 
-    // var videoCodes = [
-    //     "https://www.youtube.com/embed/5qap5aO4i9A",
-    //     "https://www.youtube.com/embed/5yx6BWlEVcY",
-    //     "https://www.youtube.com/embed/em88JdiM8bM"
-    // ]
+    let youtubeFullCode = localStorage.getItem(`videocontentcode${arrayNum}`)
+    let currentVideo = youtubeFullCode
 
-    let currentVideo = youtubeArray[arrayNum]
     var youtubeCode = getYouTubeID(currentVideo)
 
     if (arrayNum < -1) {
@@ -51,8 +47,8 @@ function VideoContent() {
             <p>current array length: {youtubeArray.length}</p>
             <p>{youtubeArray[0]}</p> */}
             <span >
-                {arrayNum > 0 && <button  onClick={prevHandler}>Prev</button>}
-                {arrayNum < youtubeArray.length - 1 && <button onClick={nextHandler}>Next</button>}
+                {arrayNum > 0 && <button onClick={prevHandler}>Prev</button>}
+                {arrayNum < totalVideoAvailable - 1 && <button onClick={nextHandler}>Next</button>}
             </span>
             <div>
                 <YouTube videoId={youtubeCode} opts={opts} onReady={onReady} />
@@ -62,9 +58,9 @@ function VideoContent() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe> */}
             </div>
-            <MusicContent/>
+            <MusicContent />
         </div>
-        
+
     )
 }
 
