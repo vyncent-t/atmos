@@ -20,6 +20,7 @@ function VideoContent() {
     function onReady(e) {
         // access to player in all event handlers via event.target
         e.target.playVideo();
+        e.target.setVolume(40)
     }
 
     let youtubeFullCode = localStorage.getItem(`videocontentcode${arrayNum}`)
@@ -37,6 +38,7 @@ function VideoContent() {
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
             autoplay: 1,
+            setVolume: 50
         },
     }
 
