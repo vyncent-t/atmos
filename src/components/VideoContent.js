@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux"
 import { useState } from "react"
 import YouTube from "react-youtube"
 import MusicContent from "./MusicContent"

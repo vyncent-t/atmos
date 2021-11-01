@@ -1,19 +1,15 @@
 import MusicButton from "./MusicButton"
 import { useEffect } from "react"
-import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import SpotifyWebApi from "spotify-web-api-node"
-import { contentActions } from "../store/Content"
 
-var userMusicContent = `pending`
+
 
 function MusicForm(props) {
     var musicid = useSelector((state) => state.spotify.clientid)
     const musicToken = useSelector((state) => state.spotify.accesstoken)
     const musicChoice = useSelector((state) => state.content.musicButtonChoice)
-    const musicPlaylist = useSelector((state) => state.content.musicPlaylistCodes)
 
-    const dispatch = useDispatch()
 
     const spotifyApi = new SpotifyWebApi({
         clientId: `${musicid}`,
@@ -28,7 +24,9 @@ function MusicForm(props) {
 
 
     function updateContent(content) {
-        localStorage.setItem("playlistCodes", content[0])
+        for (let i = 0; i < 5; i++) {
+            localStorage.setItem(`musicplaylistcode${i}`, `${content[i]}`)
+        }
     }
 
 
@@ -36,9 +34,9 @@ function MusicForm(props) {
     spotifyApi.searchPlaylists(`${musicChoice}`).then(
         (res) => {
             //save to an array?
-            console.log(`playlist res:`, res.body)
-            var playlistMusic = res.body.playlists.items
-            var playlistCodes = playlistMusic.map(playlist => {
+            console.log(`music playlist res:`, res.body)
+            var playlistMusicItems = res.body.playlists.items
+            var playlistCodes = playlistMusicItems.map(playlist => {
                 return playlist.uri
             })
             updateContent(playlistCodes)
@@ -47,12 +45,7 @@ function MusicForm(props) {
         console.log('Something went wrong!', err);
     })
 
-    useEffect(() => {
-        console.log("new playlist changes", userMusicContent)
-        console.log("current playlist state", musicPlaylist)
 
-        dispatch(contentActions.updatePlaylists(userMusicContent))
-    }, [userMusicContent])
 
 
 
