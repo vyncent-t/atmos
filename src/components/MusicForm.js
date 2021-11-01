@@ -33,7 +33,6 @@ function MusicForm(props) {
 
     spotifyApi.searchPlaylists(`${musicChoice}`).then(
         (res) => {
-            //save to an array?
             console.log(`music playlist res:`, res.body)
             var playlistMusicItems = res.body.playlists.items
             var playlistCodes = playlistMusicItems.map(playlist => {
@@ -62,7 +61,7 @@ function MusicForm(props) {
                     </div>
                     <div className="d-flex flex-column justify-content-center">
                         <MusicButton musicKeyword="Piano" />
-                        <MusicButton musicKeyword="Jazz" />
+                        <MusicButton musicKeyword="Coffee Shop" />
                         <MusicButton musicKeyword="Acoustic" />
                         <MusicButton musicKeyword="Lofi" />
                         <MusicButton musicKeyword="Yoga" />

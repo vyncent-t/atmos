@@ -40,7 +40,6 @@ const initialYoutubeState = {
         ],
     },
     currentChoice: "no video",
-    currentContent: [],
 
 }
 
