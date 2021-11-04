@@ -1,6 +1,6 @@
 import { useState } from "react"
 import YouTube from "react-youtube"
-import MusicContent from "./MusicContent"
+import styles from '../components/MainMenuStyles.module.css'
 
 var getYouTubeID = require('get-youtube-id')
 
@@ -43,14 +43,16 @@ function VideoContent() {
     }
 
     return (
-        <div className="videocontent my-5">
+        <div className="card bg-dark m-4">
             {/* <p>current array item: {arrayNum}</p>
             <p>current array length: {youtubeArray.length}</p>
             <p>{youtubeArray[0]}</p> */}
-            <span >
-                {arrayNum > 0 && <button onClick={prevHandler}>Prev</button>}
-                {arrayNum < totalVideoAvailable - 1 && <button onClick={nextHandler}>Next</button>}
-            </span>
+            <div className="card-body bg-dark mx-5">
+                <span >
+                    {arrayNum > 0 && <button onClick={prevHandler}>Prev</button>}
+                    {arrayNum < totalVideoAvailable - 1 && <button onClick={nextHandler}>Next</button>}
+                </span>
+            </div>
             <div>
                 <YouTube videoId={youtubeCode} opts={opts} onReady={onReady} />
                 {/* <iframe width="560" height="315"
@@ -59,7 +61,6 @@ function VideoContent() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe> */}
             </div>
-            <MusicContent />
         </div>
 
     )

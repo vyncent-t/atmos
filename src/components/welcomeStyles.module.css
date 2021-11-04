@@ -1,5 +1,5 @@
 .bg {
-	background-color: rgb(16, 73, 73);
+	background-color: #0a2b5d;
 	height: 100vh;
 }
 
@@ -34,6 +34,7 @@
 
 .drop {
 	filter: drop-shadow(40px 20px 12px);
+	color: #ffffff;
 	display: flex;
 	justify-content: center;
 	border-radius: 1em;
