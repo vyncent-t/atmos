@@ -1,7 +1,8 @@
 
 
 import { useDispatch, useSelector } from "react-redux"
-import { useHistory } from "react-router"
+import { useNavigate } from "react-router"
+import { useParams } from "react-router"
 import { spotifyActions } from "../store/SpotifyState"
 import { useLocation } from "react-router-dom"
 import Welcome from "../components/Welcome"
@@ -17,13 +18,15 @@ import styles from '../components/welcomeStyles.module.css'
 
 
 function Intropage() {
-    const history = useHistory()
     const location = useLocation()
     console.log(location)
     // the slice needs to be at 6 in order for the api call to work DO NOT TOUCH
     const locationCode = location.search.slice(6)
     console.log(`current location code from slice: ${locationCode}`)
+    console.log(`current location CODE SLICE from slice: ${location.search.slice(0, 6)}`)
 
+    const params = useParams()
+    console.log(`current code from params ${params.musicAuthCode}`)
 
     const authlink = useSelector((state) => state.spotify.spotifyAuthLink)
     const isAuth = useSelector((state) => state.spotify.isSpotifyAuth)
@@ -47,9 +50,7 @@ function Intropage() {
         console.log(`current code from redirect button: ${musicPassword}`)
     }
 
-    function userContinue() {
-        history.push("/menu")
-    }
+
     // const client_id = useSelector((state) => state.spotify.clientid)
     // const client_secret = useSelector((state) => state.spotify.clientsecret)
 
@@ -76,25 +77,27 @@ function Intropage() {
 
     console.log(`page loaded is auth ${isAuth}`)
 
-    if (locationCode.length > 10) {
+    // if (locationCode.length > 10) {
+    //     
+    // }
+
+
+
+    if (locationCode.length > 20 & location.search.slice(0, 6) === "?code=") {
         dispatch(spotifyActions.updateSpotifyCode(locationCode))
-    }
-
-    if (musicPassword === "none code") {
-
         return (
             <div className={styles.bg}>
-                <Welcome userWelcome={spotifyAuthToggler} onRedirect={userSpotifyAuthHandler} />
+                <WelcomeBack newCode={locationCode} />
             </div>
         )
     } else {
         return (
             <div className={styles.bg}>
-                <WelcomeBack newCode={locationCode} onContinue={userContinue} />
+                <Welcome userWelcome={spotifyAuthToggler} onRedirect={userSpotifyAuthHandler} />
             </div>
         )
     }
 
-
 }
+
 export default Intropage
