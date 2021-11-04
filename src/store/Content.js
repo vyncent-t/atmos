@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 // setting the initail state object, this is the master state which will be an expanded object
 const initialContentState = {
-    musicButtonChoice: "no music",
+    musicButtonChoice: "none",
     showCreateModal: false,
 }
 

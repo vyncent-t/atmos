@@ -21,7 +21,7 @@ function AtmosNavbar() {
                         <Link to="/menu" ><img alt="menu" style={buttonStyles} src={menu}></img></Link>
                     </li>
                     <li>
-                        <Link to="Dashboard"><img alt="room" src={room}></img></Link>
+                        <Link to="/dashboard"><img alt="room" src={room}></img></Link>
                     </li>
                 </div>
             </div>

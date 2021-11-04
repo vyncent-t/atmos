@@ -39,7 +39,7 @@ const initialYoutubeState = {
             "https://www.youtube.com/watch?v=V_vj7BMawAI"
         ],
     },
-    currentChoice: "no video",
+    currentChoice: "none",
 
 }
 
