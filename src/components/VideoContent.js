@@ -43,14 +43,14 @@ function VideoContent() {
     }
 
     return (
-        <div className="card bg-dark m-4">
+        <div className="card bg-dark m-4 rounded ">
             {/* <p>current array item: {arrayNum}</p>
             <p>current array length: {youtubeArray.length}</p>
             <p>{youtubeArray[0]}</p> */}
-            <div className="card-body bg-dark mx-5 d-flex justify-content-center">
+            <div className="card-body bg-dark mx-5 d-flex justify-content-center btn-group">
                 <div >
-                    {arrayNum > 0 && <button onClick={prevHandler}>Prev</button>}
-                    {arrayNum < totalVideoAvailable - 1 && <button onClick={nextHandler}>Next</button>}
+                    {arrayNum > 0 && <button className="btn btn-outline-light" onClick={prevHandler}>back</button>}
+                    {arrayNum < totalVideoAvailable - 1 && <button className="btn btn-outline-light" onClick={nextHandler}>next video</button>}
                 </div>
             </div>
             <div>

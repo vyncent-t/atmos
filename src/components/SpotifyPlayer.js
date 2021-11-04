@@ -32,9 +32,9 @@ function SpotifyMusicPlayer(props) {
     return (
         <Fragment>
             <div className="d-flex flex-column justify-content-center">
-                <div className="align-self-center mb-4">
-                    {arrayNum > 0 && <button onClick={prevHandler}>Prev</button>}
-                    {arrayNum < 10 && <button onClick={nextHandler}>Next</button>}
+                <div className="align-self-center mb-4 btn-group">
+                    {arrayNum > 0 && <button className="btn btn-outline-light" onClick={prevHandler}>back</button>}
+                    {arrayNum < 10 && <button className="btn btn-outline-light" onClick={nextHandler}>next playlist</button>}
                 </div>
                 <div>
                     <SpotifyPlayer
