@@ -33,8 +33,8 @@ function VideoContent() {
     }
 
     const opts = {
-        height: '490',
-        width: '690',
+        height: '520',
+        width: '1080',
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
             autoplay: 1,
@@ -47,11 +47,11 @@ function VideoContent() {
             {/* <p>current array item: {arrayNum}</p>
             <p>current array length: {youtubeArray.length}</p>
             <p>{youtubeArray[0]}</p> */}
-            <div className="card-body bg-dark mx-5">
-                <span >
+            <div className="card-body bg-dark mx-5 d-flex justify-content-center">
+                <div >
                     {arrayNum > 0 && <button onClick={prevHandler}>Prev</button>}
                     {arrayNum < totalVideoAvailable - 1 && <button onClick={nextHandler}>Next</button>}
-                </span>
+                </div>
             </div>
             <div>
                 <YouTube videoId={youtubeCode} opts={opts} onReady={onReady} />

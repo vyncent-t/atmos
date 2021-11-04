@@ -31,18 +31,22 @@ function SpotifyMusicPlayer(props) {
 
     return (
         <Fragment>
-            <span >
-                {arrayNum > 0 && <button onClick={prevHandler}>Prev</button>}
-                {arrayNum < 10 && <button onClick={nextHandler}>Next</button>}
-            </span>
-            <SpotifyPlayer
-                initialVolume={0.2}
-                uris={[`${playlistCode}`]}
-                autoPlay={true}
-                token={`${accessToken}`}
-                showSaveIcon={true}
-                styles={customStyleSpotfy}
-            />
+            <div className="d-flex flex-column justify-content-center">
+                <div className="align-self-center mb-4">
+                    {arrayNum > 0 && <button onClick={prevHandler}>Prev</button>}
+                    {arrayNum < 10 && <button onClick={nextHandler}>Next</button>}
+                </div>
+                <div>
+                    <SpotifyPlayer
+                        initialVolume={0.15}
+                        uris={[`${playlistCode}`]}
+                        autoPlay={true}
+                        token={`${accessToken}`}
+                        showSaveIcon={true}
+                        styles={customStyleSpotfy}
+                    />
+                </div>
+            </div>
         </Fragment>
     )
 }
