@@ -38,7 +38,7 @@ function WelcomeBack(props) {
                         <p className="card-text">While using the app we combine youtube and spotify to allow you to both listen and watch anything of your choosing! Click whichever genre you would like to enjoy and relax!</p>
                         <div>
                             <AnimationWrapper>
-                                <Link to="https://vyncent-t.github.io/atmos/menu" className="m-3 btn btn-success">Continue</Link>
+                                <Link to="/atmos/menu" className="m-3 btn btn-success">Continue</Link>
                             </AnimationWrapper>
                         </div>
                     </div>
