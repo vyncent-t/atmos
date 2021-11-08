@@ -7,7 +7,7 @@ import SpotifyWebApi from "spotify-web-api-node"
 
 function MusicForm(props) {
     var musicid = useSelector((state) => state.spotify.clientid)
-    const musicToken = useSelector((state) => state.spotify.accesstoken)
+    const musicToken = localStorage.getItem("spotifyToken")
     const musicChoice = useSelector((state) => state.content.musicButtonChoice)
 
 
@@ -29,20 +29,36 @@ function MusicForm(props) {
         }
     }
 
+    if (musicChoice === "none") {
+        spotifyApi.searchPlaylists("peaceful").then(
+            (res) => {
+                console.log(`music playlist res:`, res.body)
+                var playlistMusicItems = res.body.playlists.items
+                var playlistCodes = playlistMusicItems.map(playlist => {
+                    return playlist.uri
+                })
+                updateContent(playlistCodes)
+            }
+        ).catch((err) => {
+            console.log('Something went wrong!', err);
+        })
+    } else {
+        spotifyApi.searchPlaylists(`${musicChoice}`).then(
+            (res) => {
+                console.log(`music playlist res:`, res.body)
+                var playlistMusicItems = res.body.playlists.items
+                var playlistCodes = playlistMusicItems.map(playlist => {
+                    return playlist.uri
+                })
+                updateContent(playlistCodes)
+            }
+        ).catch((err) => {
+            console.log('Something went wrong!', err);
+        })
+    }
 
 
-    spotifyApi.searchPlaylists(`${musicChoice}`).then(
-        (res) => {
-            console.log(`music playlist res:`, res.body)
-            var playlistMusicItems = res.body.playlists.items
-            var playlistCodes = playlistMusicItems.map(playlist => {
-                return playlist.uri
-            })
-            updateContent(playlistCodes)
-        }
-    ).catch((err) => {
-        console.log('Something went wrong!', err);
-    })
+
 
 
 
