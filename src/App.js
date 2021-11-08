@@ -10,10 +10,10 @@ import Intropage from './pages/Intropage';
 function App() {
     return (
         <Routes>
-            <Route path="/" element={<Intropage />} />
-            <Route path="/:musicAuthCode" element={<Intropage />} />
-            <Route path="/menu" element={<MainMenuPage />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/atmos/" element={<Intropage />} />
+            <Route path="/atmos/:musicAuthCode" element={<Intropage />} />
+            <Route path="/atmos/menu" element={<MainMenuPage />} />
+            <Route path="/atmos/dashboard" element={<Dashboard />} />
         </Routes>
     )
 }
