@@ -18,11 +18,11 @@ export default function useAuth(code) {
                 setRefreshToken(res.data.refreshToken)
                 setExpiresIn(res.data.expiresIn)
                 //removes data from url and sets it back to root
-                window.history.pushState({}, null, '/')
+                // window.history.pushState({}, null, '/')
             })
             //if an error occurs, bring the user back to the root page.
             .catch(() => {
-                window.location = '/'
+                // window.location = '/'
             })
     }, [code])
 
