@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/atmos/static/css/main.74df38bc.chunk.css",
-    "main.js": "/atmos/static/js/main.bb734add.chunk.js",
-    "main.js.map": "/atmos/static/js/main.bb734add.chunk.js.map",
+    "main.js": "/atmos/static/js/main.4fd0fe5c.chunk.js",
+    "main.js.map": "/atmos/static/js/main.4fd0fe5c.chunk.js.map",
     "runtime-main.js": "/atmos/static/js/runtime-main.1cbbd36a.js",
     "runtime-main.js.map": "/atmos/static/js/runtime-main.1cbbd36a.js.map",
     "static/css/2.f2512455.chunk.css": "/atmos/static/css/2.f2512455.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.f2512455.chunk.css",
     "static/js/2.69882b33.chunk.js",
     "static/css/main.74df38bc.chunk.css",
-    "static/js/main.bb734add.chunk.js"
+    "static/js/main.4fd0fe5c.chunk.js"
   ]
 }
