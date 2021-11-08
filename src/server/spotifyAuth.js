@@ -10,7 +10,7 @@ function useAuth(code) {
     // const [useRefresh, setRefresh] = useState()
     // const [useExpire, setExpire] = useState()
 
-    // var authcode = useSelector((state) => state.spotify.authcode)
+    // var code = useSelector((state) => state.spotify.code)
     var accesstoken = useSelector((state) => state.spotify.accesstoken)
     // var refreshtoken = useSelector((state) => state.spotify.refreshtoken)
     // var expiresin = useSelector((state) => state.spotify.expiresin)
@@ -49,7 +49,11 @@ function useAuth(code) {
 
 
                 //removes data from url and sets it back to root
-                window.history.pushState({}, null, "/")
+
+
+                // window.history.pushState({}, null, "/")
+
+
                 // let codePocket = "http://localhost:3000/menu"
                 // window.location.href = codePocket
                 // console.log(useAccess)

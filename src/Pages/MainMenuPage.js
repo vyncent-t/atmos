@@ -1,22 +1,18 @@
 import MainMenu from '../components/MainMenu'
-import content from '../images/contentSelect.png';
+// import content from '../images/tvlogo.png';
+import styles from '../components/MainMenuStyles.module.css'
+import { Fragment } from 'react';
+import AtmosNavbar from '../components/Navbar';
 
-const drop = {
-    filter: 'drop-shadow(12px 12px 12px )',
-    display: 'flex',
-justifyContent: 'center'
-}
+
 function MainMenuPage() {
     return (
-        <div className="mainpage">
-            <div className="containerdiv">
-                {/* <AtmosNavbar /> */}
-                <div style={drop}>
-                <img alt="" src={content}></img>
-                </div>
-                <MainMenu  />
+        <Fragment>
+            <AtmosNavbar />
+            <div className={styles.containerdiv}>
+                <MainMenu />
             </div>
-        </div>
+        </Fragment>
     )
 }
 

@@ -1,4 +1,9 @@
 import { useHistory } from "react-router";
+import styles from './MainMenuStyles.module.css'
+import { Link } from "react-router-dom";
+
+
+
 function ConfModal(props) {
 
 
@@ -7,16 +12,12 @@ function ConfModal(props) {
     function cancelHandler() {
         props.onCancel();
     }
-    function confirmHandler() {
-        props.onCancel();
-        history.push("/dashboard")
-    }
 
     return (
-        <div className="menuConfirm">
+        <div className={styles.backdrop}>
             <p> Are you sure?</p>
             <button className="btn btn-secondary m-1" onClick={cancelHandler}>Cancel</button>
-            <button className="btn btn-success m-1" onClick={confirmHandler}><span className="text-light">Continue</span></button>
+            <Link to="/dashboard" className="m-3 btn btn-success">Continue</Link>
         </div>
     )
 }

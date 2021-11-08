@@ -1,13 +1,12 @@
-import { useDispatch } from "react-redux"
-import { useSelector } from "react-redux"
 import { useState } from "react"
 import YouTube from "react-youtube"
-import MusicContent from "./MusicContent"
+import styles from '../components/MainMenuStyles.module.css'
 
 var getYouTubeID = require('get-youtube-id')
 
 function VideoContent() {
-    const youtubeArray = useSelector((state) => state.youtube.currentContent)
+
+    let totalVideoAvailable = localStorage.getItem("videocodelength")
     const [arrayNum, setArrayNumber] = useState(0)
 
     function nextHandler() {
@@ -21,15 +20,12 @@ function VideoContent() {
     function onReady(e) {
         // access to player in all event handlers via event.target
         e.target.playVideo();
+        e.target.setVolume(40)
     }
 
-    // var videoCodes = [
-    //     "https://www.youtube.com/embed/5qap5aO4i9A",
-    //     "https://www.youtube.com/embed/5yx6BWlEVcY",
-    //     "https://www.youtube.com/embed/em88JdiM8bM"
-    // ]
+    let youtubeFullCode = localStorage.getItem(`videocontentcode${arrayNum}`)
+    let currentVideo = youtubeFullCode
 
-    let currentVideo = youtubeArray[arrayNum]
     var youtubeCode = getYouTubeID(currentVideo)
 
     if (arrayNum < -1) {
@@ -37,23 +33,26 @@ function VideoContent() {
     }
 
     const opts = {
-        height: '490',
-        width: '690',
+        height: '520',
+        width: '1080',
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
             autoplay: 1,
+            setVolume: 50
         },
     }
 
     return (
-        <div className="videocontent my-5">
+        <div className="card bg-dark m-4 rounded ">
             {/* <p>current array item: {arrayNum}</p>
             <p>current array length: {youtubeArray.length}</p>
             <p>{youtubeArray[0]}</p> */}
-            <span >
-                {arrayNum > 0 && <button  onClick={prevHandler}>Prev</button>}
-                {arrayNum < youtubeArray.length - 1 && <button onClick={nextHandler}>Next</button>}
-            </span>
+            <div className="card-body bg-dark mx-5 d-flex justify-content-center btn-group">
+                <div >
+                    {arrayNum > 0 && <button className="btn btn-outline-light" onClick={prevHandler}>back</button>}
+                    {arrayNum < totalVideoAvailable - 1 && <button className="btn btn-outline-light" onClick={nextHandler}>next video</button>}
+                </div>
+            </div>
             <div>
                 <YouTube videoId={youtubeCode} opts={opts} onReady={onReady} />
                 {/* <iframe width="560" height="315"
@@ -62,9 +61,8 @@ function VideoContent() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe> */}
             </div>
-            <MusicContent/>
         </div>
-        
+
     )
 }
 

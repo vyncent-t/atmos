@@ -1,21 +1,25 @@
+import { Fragment } from "react";
 import MusicContent from "../components/MusicContent";
 import VideoContent from "../components/VideoContent";
+import AtmosNavbar from "../components/Navbar";
+import styles from '../components/MainMenuStyles.module.css'
+
 
 
 function Dashboard() {
 
     return (
-        <div className="mainpage">
-            <div className="containerdiv">
-                {/* <AtmosNavbar /> */}
-                
-                <span className="pracmenu">
-                    <VideoContent />
-                   
-                </span>
-
+        <Fragment>
+            <AtmosNavbar />
+            <div className="mainpage">
+                <div className={styles.containerdiv}>
+                    <span className="pracmenu">
+                        <VideoContent />
+                        <MusicContent />
+                    </span>
+                </div>
             </div>
-        </div>
+        </Fragment>
     )
 }
 
