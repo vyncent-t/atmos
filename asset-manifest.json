@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.74df38bc.chunk.css",
-    "main.js": "/static/js/main.bb734add.chunk.js",
-    "main.js.map": "/static/js/main.bb734add.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.e04eb8b1.js",
-    "runtime-main.js.map": "/static/js/runtime-main.e04eb8b1.js.map",
-    "static/css/2.f2512455.chunk.css": "/static/css/2.f2512455.chunk.css",
-    "static/js/2.3b5616b0.chunk.js": "/static/js/2.3b5616b0.chunk.js",
-    "static/js/2.3b5616b0.chunk.js.map": "/static/js/2.3b5616b0.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.f2512455.chunk.css.map": "/static/css/2.f2512455.chunk.css.map",
-    "static/css/main.74df38bc.chunk.css.map": "/static/css/main.74df38bc.chunk.css.map",
-    "static/js/2.3b5616b0.chunk.js.LICENSE.txt": "/static/js/2.3b5616b0.chunk.js.LICENSE.txt",
-    "static/media/title.fc9b6070.png": "/static/media/title.fc9b6070.png",
-    "static/media/tvlogo.1ee8169d.png": "/static/media/tvlogo.1ee8169d.png",
-    "static/media/welcome.8fa58ad3.png": "/static/media/welcome.8fa58ad3.png"
+    "main.css": "/atmos/static/css/main.74df38bc.chunk.css",
+    "main.js": "/atmos/static/js/main.bb734add.chunk.js",
+    "main.js.map": "/atmos/static/js/main.bb734add.chunk.js.map",
+    "runtime-main.js": "/atmos/static/js/runtime-main.1cbbd36a.js",
+    "runtime-main.js.map": "/atmos/static/js/runtime-main.1cbbd36a.js.map",
+    "static/css/2.f2512455.chunk.css": "/atmos/static/css/2.f2512455.chunk.css",
+    "static/js/2.69882b33.chunk.js": "/atmos/static/js/2.69882b33.chunk.js",
+    "static/js/2.69882b33.chunk.js.map": "/atmos/static/js/2.69882b33.chunk.js.map",
+    "index.html": "/atmos/index.html",
+    "static/css/2.f2512455.chunk.css.map": "/atmos/static/css/2.f2512455.chunk.css.map",
+    "static/css/main.74df38bc.chunk.css.map": "/atmos/static/css/main.74df38bc.chunk.css.map",
+    "static/js/2.69882b33.chunk.js.LICENSE.txt": "/atmos/static/js/2.69882b33.chunk.js.LICENSE.txt",
+    "static/media/title.fc9b6070.png": "/atmos/static/media/title.fc9b6070.png",
+    "static/media/tvlogo.1ee8169d.png": "/atmos/static/media/tvlogo.1ee8169d.png",
+    "static/media/welcome.8fa58ad3.png": "/atmos/static/media/welcome.8fa58ad3.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.e04eb8b1.js",
+    "static/js/runtime-main.1cbbd36a.js",
     "static/css/2.f2512455.chunk.css",
-    "static/js/2.3b5616b0.chunk.js",
+    "static/js/2.69882b33.chunk.js",
     "static/css/main.74df38bc.chunk.css",
     "static/js/main.bb734add.chunk.js"
   ]
