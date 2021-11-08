@@ -55,7 +55,7 @@
 	},
 	"devDependencies": {
 		"gh-pages": "^3.2.3",
-		"homepage": "https://vyncent-t.github.io/atmos/",
+		"homepage": "https://vyncent-t.github.io/atmos",
 		"nodemon": "^2.0.13"
 	}
 }
