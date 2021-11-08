@@ -25,10 +25,6 @@ function SpotifyMusicPlayer(props) {
     var playlistCode = localStorage.getItem(`musicplaylistcode${arrayNum}`)
     console.log(`current spotify playlist`, playlistCode)
 
-    let customStyleSpotfy = {
-        bgColor: "dark blue"
-    }
-
     return (
         <Fragment>
             <div className="d-flex flex-column justify-content-center">
@@ -43,7 +39,6 @@ function SpotifyMusicPlayer(props) {
                         autoPlay={true}
                         token={`${accessToken}`}
                         showSaveIcon={true}
-                        styles={customStyleSpotfy}
                     />
                 </div>
             </div>

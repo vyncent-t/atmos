@@ -18,7 +18,7 @@ function AtmosNavbar() {
                 </div>
                 <div className="navbarbtn d-flex align-self-center">
                     <Link to="/menu" ><img alt="menu" style={buttonStyles} src={menu}></img></Link>
-                    <Link to="/dashboard"><img alt="room" src={room}></img></Link>
+                    {/* <Link to="/dashboard"><img alt="room" src={room}></img></Link> */}
                 </div>
             </div>
         </nav>)
