@@ -19,7 +19,7 @@ function MainMenu(props) {
             </div>
             {(videoChoice !== "none" && musicChoice !== "none") && <div>
                 <AnimationWrapper>
-                    <Link to="/dashboard" className="m-3 btn btn-success">Create Atmos
+                    <Link to="https://vyncent-t.github.io/atmos/dashboard" className="m-3 btn btn-success">Create Atmos
                     </Link>
                 </AnimationWrapper>
             </div>}
