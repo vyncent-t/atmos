@@ -5,8 +5,6 @@ import { Route, Routes, } from "react-router-dom"
 import Dashboard from "./pages/Dashboard"
 import Intropage from './pages/Intropage';
 
-// const code = new URLSearchParams(window.location.search).get('code')
-
 function App() {
     return (
         <Routes>
