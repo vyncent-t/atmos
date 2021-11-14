@@ -10,7 +10,7 @@ export default function useAuth(code) {
     //use effect method that retrieves and sets the access token every time the user logs in.
     useEffect(() => {
         axios
-            .post('https://vyncent-t.github.io/atmos/login', {
+            .post('/login', {
                 code,
             }).then(res => {
                 console.log(res.data)
@@ -33,7 +33,7 @@ export default function useAuth(code) {
         const interval = setInterval(() => {
 
             axios
-                .post('https://vyncent-t.github.io/atmos/refresh', {
+                .post('/refresh', {
                     refreshToken,
                 })
                 .then(res => {
