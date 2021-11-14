@@ -9,7 +9,7 @@ app.use(cors())
 app.use(bodyParser.json())
 
 
-app.post('https://vyncent-t.github.io/atmos/login', (req, res) => {
+app.post('/login', (req, res) => {
     const code = req.body.code
     const spotifyApi = new SpotifyWebApi({
         redirectUri: 'https://vyncent-t.github.io/atmos',
@@ -34,7 +34,7 @@ app.post('https://vyncent-t.github.io/atmos/login', (req, res) => {
 
 
 
-app.post('https://vyncent-t.github.io/atmos/refresh', (req, res) => {
+app.post('/refresh', (req, res) => {
 
     const refreshToken = req.body.refreshToken
     console.log(refreshToken)
