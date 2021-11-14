@@ -61,6 +61,7 @@ function useAuth(code) {
                 // console.log(useExpire)
             })
             .catch((err) => {
+                console.log("auth util error")
                 console.log(err)
             })
     }, [code, dispatch])

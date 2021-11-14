@@ -9,7 +9,7 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<Intropage />} />
-            {/* <Route path="/:musicAuthCode" element={<Intropage />} /> */}
+            <Route path="/:musicAuthCode" element={<Intropage />} />
             <Route path="/menu" element={<MainMenuPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
