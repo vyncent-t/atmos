@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 app.post('/login', (req, res) => {
     const code = req.body.code
     const spotifyApi = new SpotifyWebApi({
-        redirectUri: 'https://vyncent-t.github.io/atmos',
+        redirectUri: 'https://atmos-project.herokuapp.com/',
         clientId: '50885eb87ce14757bdde10e7fb01f91a',
         clientSecret: '4acdaecbdc96463bbe8daee8d938550c'
 
@@ -40,7 +40,7 @@ app.post('/refresh', (req, res) => {
     console.log(refreshToken)
 
     const spotifyApi = new SpotifyWebApi({
-        redirectUri: 'https://vyncent-t.github.io/atmos',
+        redirectUri: 'https://atmos-project.herokuapp.com/',
         clientId: '50885eb87ce14757bdde10e7fb01f91a',
         clientSecret: '4acdaecbdc96463bbe8daee8d938550c',
         refreshToken,
