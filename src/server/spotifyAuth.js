@@ -21,7 +21,7 @@ function useAuth(code) {
     useEffect(() => {
 
         axios
-            .post('https://vyncent-t.github.io/atmos/login', {
+            .post('/login', {
                 code,
             }).then(res => {
                 console.log(res.data)
