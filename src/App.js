@@ -1,9 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MainMenuPage from './pages/MainMenuPage'
+import MainMenuPage from './pages/mainmenupage'
 import { Route, Routes, } from "react-router-dom"
-import Dashboard from "./pages/Dashboard"
-import Intropage from './pages/Intropage';
+import Dashboard from "./pages/dashboard"
+import Intropage from './pages/intropage';
 
 function App() {
     return (
