@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainMenuPage from './pages/MainMenuPage'
-import { Route, Routes, Navigate } from "react-router-dom"
+import { Route, Routes, } from "react-router-dom"
 import Dashboard from "./pages/Dashboard"
 import Intropage from './pages/Intropage';
 
