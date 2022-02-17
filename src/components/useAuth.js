@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
@@ -10,7 +10,7 @@ export default function useAuth(code) {
     //use effect method that retrieves and sets the access token every time the user logs in.
     useEffect(() => {
         axios
-            .post('https://vyncent-t.github.io/atmos/login', {
+            .post('/login', {
                 code,
             }).then(res => {
                 console.log(res.data)
@@ -18,11 +18,11 @@ export default function useAuth(code) {
                 setRefreshToken(res.data.refreshToken)
                 setExpiresIn(res.data.expiresIn)
                 //removes data from url and sets it back to root
-                window.history.pushState({}, null, '/')
+                // window.history.pushState({}, null, '/')
             })
             //if an error occurs, bring the user back to the root page.
             .catch(() => {
-                window.location = '/'
+                // window.location = '/'
             })
     }, [code])
 
@@ -33,7 +33,7 @@ export default function useAuth(code) {
         const interval = setInterval(() => {
 
             axios
-                .post('https://vyncent-t.github.io/atmos/refresh', {
+                .post('/refresh', {
                     refreshToken,
                 })
                 .then(res => {

@@ -1,19 +1,17 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MainMenuPage from './pages/MainMenuPage'
-import { Route, Routes, Navigate } from "react-router-dom"
-import Dashboard from "./pages/Dashboard"
-import Intropage from './pages/Intropage';
-
-// const code = new URLSearchParams(window.location.search).get('code')
+import MainMenuPage from './pages/mainmenupage'
+import { Route, Routes, } from "react-router-dom"
+import Dashboard from "./pages/dashboard"
+import Intropage from './pages/intropage';
 
 function App() {
     return (
         <Routes>
-            <Route path="/atmos/" element={<Intropage />} />
-            <Route path="/atmos/:musicAuthCode" element={<Intropage />} />
-            <Route path="/atmos/menu" element={<MainMenuPage />} />
-            <Route path="/atmos/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Intropage />} />
+            <Route path="/:musicAuthCode" element={<Intropage />} />
+            <Route path="/menu" element={<MainMenuPage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
     )
 }
